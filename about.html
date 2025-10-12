@@ -6,23 +6,16 @@
   <title>About Crust & Crums | Fast Food, Pizzas & BBQ Point</title>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-  
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css" />
-  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/icons/favicon.png">
 
   <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      line-height: 1.8;
-      color: #fff;
-      background: #111;
-      scroll-behavior: smooth;
-    }
+    /* General Styles */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Poppins', sans-serif; line-height: 1.8; color: #fff; background: #111; scroll-behavior: smooth; }
+    a { text-decoration: none; }
 
     /* Navbar */
     .navbar {
@@ -38,25 +31,28 @@
       align-items: center;
       z-index: 100;
     }
-    .navbar .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #f7a600;
-    }
-    .navbar ul {
-      list-style: none;
+    .logo { font-size: 1.6rem; font-weight: 700; color: #f7a600; }
+    
+    .nav-links {
       display: flex;
       gap: 25px;
-      margin: 0;
-      padding: 0;
+      align-items: center;
     }
-    .navbar a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
+    .nav-links a { color: #fff; font-weight: 500; transition: 0.3s; }
+    .nav-links a:hover, .nav-links a.active { color: #f7a600; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
     }
-    .navbar a.active {
-      color: #f7a600;
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      transition: 0.3s;
     }
 
     /* Hero Section */
@@ -66,50 +62,24 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      height: 300px;
+      height: 350px;
       background: url('assets/images/hero-bg.jpg') center/cover no-repeat;
+      margin-top: 70px;
     }
     .hero .overlay {
       position: absolute;
       top: 0; left: 0; width: 100%; height: 100%;
       background: rgba(0,0,0,0.5);
     }
-    .hero-content {
-      position: relative;
-      color: #fff;
-      z-index: 2;
-      padding: 0 20px;
-    }
-    .hero-content h1 {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-      color: #f7a600;
-    }
-    .hero-content p {
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto;
-      color: #ddd;
-    }
+    .hero-content { position: relative; z-index: 2; padding: 0 20px; }
+    .hero-content h1 { font-size: 2.5rem; margin-bottom: 15px; color: #f7a600; }
+    .hero-content p { font-size: 1.1rem; max-width: 700px; margin: 0 auto; color: #ddd; }
 
     /* Sections */
-    section {
-      padding: 60px 10%;
-    }
-    h2 {
-      color: #f7a600;
-      margin-bottom: 20px;
-      font-size: 2rem;
-    }
-    p {
-      margin-bottom: 20px;
-      color: #ddd;
-    }
-    ul {
-      list-style: disc inside;
-      padding-left: 0;
-      margin-bottom: 20px;
-    }
+    section { padding: 60px 10%; }
+    h2 { color: #f7a600; margin-bottom: 25px; font-size: 2rem; }
+    p, ul li { color: #ddd; font-size: 1rem; margin-bottom: 15px; }
+    ul { list-style: disc inside; padding-left: 0; margin-bottom: 20px; }
 
     /* Buttons */
     .btn {
@@ -121,57 +91,46 @@
       background: #f7a600;
       color: #000;
       transition: 0.3s;
-      margin-top: 10px;
+      margin: 10px 5px 0 0;
     }
-    .btn:hover {
-      background: #fff;
-      color: #111;
-    }
-    .btn.secondary {
-      background: #111;
-      border: 2px solid #f7a600;
-      color: #f7a600;
-    }
-    .btn.secondary:hover {
-      background: #f7a600;
-      color: #000;
-    }
+    .btn:hover { background: #fff; color: #111; }
+    .btn.secondary { background: #111; border: 2px solid #f7a600; color: #f7a600; }
+    .btn.secondary:hover { background: #f7a600; color: #000; }
 
     /* Footer */
-    footer {
-      background: #000;
-      text-align: center;
-      color: #aaa;
-      padding: 20px;
-    }
-    footer a {
-      color: #f7a600;
-      text-decoration: none;
-    }
+    footer { background: #000; text-align: center; color: #aaa; padding: 25px 10%; }
+    footer a { color: #f7a600; }
 
     /* Responsive */
+    @media(max-width:1024px){ section { padding: 50px 8%; } }
     @media(max-width:768px){
-      .navbar ul {
+      .hamburger { display: flex; }
+      .nav-links {
+        position: absolute;
+        top: 65px;
+        right: -100%;
+        background: #000;
         flex-direction: column;
+        width: 200px;
+        padding: 15px;
         gap: 15px;
+        transition: 0.3s;
+        border-radius: 0 0 10px 10px;
       }
-      .hero {
-        height: 250px;
-      }
-      .hero-content h1 {
-        font-size: 2rem;
-      }
-      section {
-        padding: 50px 5%;
-      }
-      .btn {
-        width: 100%;
-        text-align: center;
-      }
-      .btn.secondary {
-        margin-left: 0;
-        margin-top: 10px;
-      }
+      .nav-links.active { right: 8%; }
+      section { padding: 40px 5%; }
+      .hero { height: 250px; }
+      .hero-content h1 { font-size: 2rem; }
+      .hero-content p { font-size: 1rem; }
+      .btn { width: 100%; margin-bottom: 10px; }
+      .btn.secondary { width: 100%; margin-top: 0; }
+    }
+    @media(max-width:480px){
+      .hero-content h1 { font-size: 1.6rem; }
+      .hero-content p { font-size: 0.95rem; }
+      h2 { font-size: 1.6rem; }
+      p, ul li { font-size: 0.95rem; }
+      section { padding: 35px 5%; }
     }
   </style>
 </head>
@@ -182,12 +141,17 @@
   <header class="navbar">
     <div class="logo">Crust & Crums</div>
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
     </nav>
   </header>
 
@@ -201,7 +165,7 @@
   </section>
 
   <!-- Story Section -->
-  <section class="about-story" style="background:#111; color:#fff;">
+  <section class="about-story" style="background:#111;">
     <h2>Our Journey</h2>
     <p>Crust & Crums was officially established on <strong>11th October 2024</strong> by <strong>Syed Muhammad Atid & Sons</strong>. Our journey began with a humble home kitchen, driven by the love for fast food that’s fresh, tasty, and made with care. What started as a small dream quickly turned into a local favorite, thanks to our commitment to quality and authentic flavors.</p>
     <p>From crispy burgers to cheesy pizzas and sizzling BBQ, every item is crafted with premium ingredients, attention to detail, and a touch of love. Our goal has always been simple: make food that makes people happy and keeps them coming back for more.</p>
@@ -209,7 +173,7 @@
   </section>
 
   <!-- What Makes Us Special -->
-  <section class="about-why" style="background:#1a1a1a; color:#fff;">
+  <section class="about-why" style="background:#1a1a1a;">
     <h2>Why Customers Love Us</h2>
     <ul>
       <li><strong>Fresh & Quality Ingredients:</strong> Only the best for our burgers, pizzas, and BBQ items.</li>
@@ -231,6 +195,13 @@
   <footer>
     <p>© 2024-2025 <strong>Crust & Crums</strong> | Designed & Developed by <a href="https://smazweb.site" target="_blank">Smaz</a></p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      nav.classList.toggle('active');
+    }
+  </script>
 
 </body>
 </html>

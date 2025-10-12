@@ -6,24 +6,103 @@
   <title>Crust & Crums | Fast Food, Pizzas & BBQ Point</title>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-  
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css" />
-  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+
+  <style>
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body { font-family: 'Poppins', sans-serif; background:#111; color:#fff; line-height:1.8; scroll-behavior:smooth; }
+
+    a { text-decoration:none; }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top:0; left:0; width:100%;
+      background:#000; display:flex;
+      justify-content:space-between; align-items:center;
+      padding:15px 8%; z-index:100;
+    }
+    .logo { font-size:1.6rem; font-weight:700; color:#f7a600; }
+
+    nav ul {
+      display:flex; gap:25px; list-style:none;
+    }
+    nav ul a { color:#fff; font-weight:500; transition:0.3s; }
+    nav ul a:hover, nav ul a.active { color:#f7a600; }
+
+    /* Hamburger */
+    .hamburger { display:none; flex-direction:column; cursor:pointer; gap:5px; }
+    .hamburger span { width:25px; height:3px; background:#fff; transition:0.3s; }
+
+    /* Hero */
+    .hero { position:relative; text-align:center; display:flex; flex-direction:column; justify-content:center; align-items:center; height:400px; background:url('assets/images/hero-bg.jpg') center/cover no-repeat; margin-top:70px; }
+    .hero .overlay { position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); }
+    .hero-content { position:relative; z-index:2; padding:0 20px; }
+    .hero-content h1 { font-size:2.5rem; margin-bottom:15px; color:#f7a600; }
+    .hero-content p { font-size:1.1rem; max-width:700px; margin:0 auto 20px; color:#ddd; }
+    .btn { padding:12px 25px; border-radius:25px; font-weight:600; color:#000; background:#f7a600; display:inline-block; margin:5px; transition:0.3s; }
+    .btn:hover { background:#fff; color:#111; }
+    .btn.secondary { background:#111; border:2px solid #f7a600; color:#f7a600; }
+    .btn.secondary:hover { background:#f7a600; color:#000; }
+
+    /* Featured Menu */
+    .featured { padding:60px 10%; }
+    .featured h2 { font-size:2rem; margin-bottom:30px; color:#f7a600; }
+    .menu-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+    .menu-item { background:#1a1a1a; border-radius:12px; overflow:hidden; transition:0.3s; }
+    .menu-item img { width:100%; display:block; }
+    .menu-info { padding:15px; }
+    .menu-info h3 { font-size:1.2rem; margin-bottom:8px; }
+    .menu-info p { font-size:0.95rem; color:#ccc; margin-bottom:12px; }
+    .order-btn { width:100%; padding:10px; border:none; border-radius:25px; background:#f7a600; font-weight:600; color:#000; cursor:pointer; transition:0.3s; }
+    .order-btn:hover { background:#fff; color:#111; }
+
+    /* About Preview */
+    .about-preview { display:flex; align-items:center; justify-content:center; background:#111; padding:60px 10%; }
+    .about-text { max-width:600px; text-align:center; }
+    .about-text h2 { font-size:2rem; margin-bottom:20px; color:#f7a600; }
+    .about-text p { font-size:1rem; color:#ccc; margin-bottom:15px; }
+
+    /* Footer */
+    footer { background:#000; text-align:center; color:#aaa; padding:25px 10%; }
+    footer a { color:#f7a600; }
+
+    /* Responsive */
+    @media(max-width:1024px){ .menu-grid { grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:768px){
+      nav ul { position:absolute; top:65px; right:-100%; flex-direction:column; background:#000; width:200px; padding:15px; gap:15px; border-radius:0 0 10px 10px; transition:0.3s; }
+      nav ul.active { right:8%; }
+      .hamburger { display:flex; }
+      .hero { height:300px; }
+      .hero-content h1 { font-size:2rem; }
+      .menu-grid { grid-template-columns:1fr; }
+      .about-preview { flex-direction:column; text-align:center; padding:40px 5%; }
+      .btn { width:100%; }
+      .btn.secondary { margin-top:10px; }
+    }
+    @media(max-width:480px){
+      .hero-content h1 { font-size:1.6rem; }
+      .hero-content p { font-size:0.95rem; }
+      .featured h2, .about-text h2 { font-size:1.6rem; }
+      .menu-info h3 { font-size:1rem; }
+      .menu-info p { font-size:0.9rem; }
+      .about-text p { font-size:0.95rem; }
+      .featured { padding:40px 5%; }
+      .about-preview { padding:35px 5%; }
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- 🔸 Navbar -->
+  <!-- Navbar -->
   <header class="navbar">
     <div class="logo">Crust & Crums</div>
     <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </div>
     <nav>
       <ul id="nav-links">
@@ -35,18 +114,18 @@
     </nav>
   </header>
 
-  <!-- 🔸 Hero Section -->
+  <!-- Hero Section -->
   <section class="hero">
     <div class="overlay"></div>
     <div class="hero-content">
-      <h1>Delicious Fast Food, PIZZA & BBQ</h1>
+      <h1>Delicious Fast Food, Pizza & BBQ</h1>
       <p>Premium taste, sizzling freshness & irresistible aroma – straight from Crust & Crums kitchen to your door.</p>
       <a href="menu.html" class="btn">Explore Menu</a>
       <a href="https://wa.me/923313787209" class="btn secondary">Order on WhatsApp</a>
     </div>
   </section>
 
-  <!-- 🔸 Featured Menu -->
+  <!-- Featured Menu -->
   <section class="featured">
     <h2>🔥 Our Specials</h2>
     <div class="menu-grid">
@@ -79,39 +158,42 @@
     </div>
   </section>
 
-  <!-- 🔸 About Preview -->
+  <!-- About Preview -->
   <section class="about-preview">
     <div class="about-text">
       <h2>About Crust & Crums</h2>
       <p>We’re more than just a fast food spot — we’re a destination for food lovers. From juicy burgers to sizzling BBQs, every recipe is crafted with passion and premium ingredients.</p>
-      <div class="btn-wrapper">
-        <a href="about.html" class="btn">Learn More</a>
-      </div>
+      <a href="about.html" class="btn">Learn More</a>
     </div>
   </section>
 
-  <!-- 🔸 Footer -->
+  <!-- Footer -->
   <footer>
     <p>© 2024-2025 <strong>Crust & Crums</strong> | Designed & Developed by <a href="https://smazweb.site" target="_blank">Smaz</a></p>
   </footer>
 
   <!-- JS -->
   <script>
-    // WhatsApp order
     function orderNow(item) {
       const number = "923313787209";
       const message = `Hi! I want to order: ${item}`;
       window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`, "_blank");
     }
 
-    // Hamburger menu toggle
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
-
     hamburger.addEventListener('click', () => {
       navLinks.classList.toggle('active');
+      hamburger.classList.toggle('open'); // For animation
     });
   </script>
+
+  <style>
+    /* Hamburger animation */
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+    .hamburger.open span:nth-child(2) { opacity:0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+  </style>
 
 </body>
 </html>
