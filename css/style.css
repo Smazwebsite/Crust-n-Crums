@@ -1,0 +1,273 @@
+/* 🌟 Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #111;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* 🔸 Navbar */
+.navbar {
+  width: 100%;
+  padding: 15px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.navbar .logo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  color: #f7a600;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar .active {
+  color: #f7a600;
+}
+
+/* 🔸 Hero Section */
+.hero {
+  height: 100vh;
+  background: url('../assets/images/hero-bg.jpg') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 10%;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #f7a600;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #ddd;
+  margin-bottom: 30px;
+}
+
+.btn {
+  background: #f7a600;
+  color: #000;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+  display: inline-block;
+  margin: 5px;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #111;
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 2px solid #f7a600;
+  color: #f7a600;
+}
+
+.btn.secondary:hover {
+  background: #f7a600;
+  color: #000;
+}
+
+/* 🔸 Featured Menu Section */
+.featured {
+  padding: 100px 10% 80px;
+  text-align: center;
+  background: #fff;
+  color: #111;
+}
+
+.featured h2 {
+  color: #f7a600;
+  font-size: 2.3rem;
+  margin-bottom: 50px;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 35px;
+}
+
+.menu-item {
+  background: #f9f9f9;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.menu-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.menu-item img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.menu-item h3 {
+  color: #111;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.menu-item p {
+  color: #555;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+
+.order-btn {
+  background: #f7a600;
+  border: none;
+  color: #111;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.order-btn:hover {
+  background: #111;
+  color: #fff;
+}
+
+/* 🔸 About Preview Section */
+.about-preview {
+  background: url('../assets/images/about-bg.jpg') center/cover no-repeat;
+  padding: 100px 20px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+.about-preview::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.about-text {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #ffcc00;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.about-text .btn {
+  background: #ffcc00;
+  color: #000;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.about-text .btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* 🔸 Footer */
+footer {
+  background: #000;
+  text-align: center;
+  padding: 25px 15px;
+  font-size: 0.9rem;
+  color: #aaa;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+  color: #f7a600;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ✨ Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
