@@ -24,6 +24,7 @@ body {
   top: 0;
   z-index: 100;
   backdrop-filter: blur(10px);
+  flex-wrap: wrap;
 }
 
 .navbar .logo {
@@ -54,13 +55,14 @@ body {
 
 /* 🔸 Hero Section */
 .hero {
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   background: url('../assets/images/hero-bg.jpg') center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 0 10%;
+  padding: 120px 10% 60px;
   position: relative;
 }
 
@@ -83,12 +85,14 @@ body {
   color: #f7a600;
   font-family: 'Poppins', sans-serif;
   margin-bottom: 15px;
+  line-height: 1.2;
 }
 
 .hero p {
   font-size: 1.1rem;
   color: #ddd;
   margin-bottom: 30px;
+  line-height: 1.5;
 }
 
 .btn {
@@ -157,6 +161,7 @@ body {
 
 .menu-item img {
   width: 100%;
+  height: auto;
   border-radius: 15px;
   margin-bottom: 15px;
 }
@@ -272,7 +277,7 @@ footer a:hover {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* 📱 Mobile Responsive Styles */
+/* 📱 Tablet and Mobile Responsive */
 @media (max-width: 991px) {
   .navbar ul {
     gap: 15px;
@@ -318,10 +323,11 @@ footer a:hover {
     flex-direction: column;
     gap: 10px;
     margin-top: 10px;
+    align-items: center;
   }
 
   .hero {
-    padding: 0 5%;
+    padding: 100px 5% 50px;
   }
 
   .hero h1 {
@@ -351,9 +357,51 @@ footer a:hover {
 
   .btn {
     padding: 10px 20px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
   }
 
   .btn.secondary {
     margin-top: 10px;
   }
+}
+
+/* Very Small Phones */
+@media (max-width: 360px) {
+  .hero h1 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .hero p {
+    font-size: 0.85rem;
+  }
+
+  .about-text h2 {
+    font-size: 1.4rem;
+  }
+
+  .about-text p {
+    font-size: 0.85rem;
+  }
+
+  .menu-item h3 {
+    font-size: 1rem;
+  }
+
+  .menu-item p {
+    font-size: 0.85rem;
+  }
+
+  .order-btn {
+    width: 100%;
+    padding: 10px 0;
+  }
+}
+
+/* Make all images responsive */
+img {
+  width: 100%;
+  height: auto;
 }
