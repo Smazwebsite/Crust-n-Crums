@@ -20,8 +20,13 @@
   <!-- 🔸 Navbar -->
   <header class="navbar">
     <div class="logo">Crust & Crums</div>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
     <nav>
-      <ul>
+      <ul id="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="menu.html">Menu</a></li>
         <li><a href="about.html">About</a></li>
@@ -92,12 +97,20 @@
 
   <!-- JS -->
   <script>
+    // WhatsApp order
     function orderNow(item) {
-      // Direct WhatsApp order link
       const number = "923313787209";
       const message = `Hi! I want to order: ${item}`;
       window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`, "_blank");
     }
+
+    // Hamburger menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
   </script>
 
 </body>
