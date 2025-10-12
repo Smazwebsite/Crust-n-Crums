@@ -75,16 +75,15 @@
   </section>
 
   <!-- 🔸 About Preview -->
-<section class="about-preview">
-  <div class="about-text">
-    <h2>About Crust & Crums</h2>
-    <p>We’re more than just a fast food spot — we’re a destination for food lovers. From juicy burgers to sizzling BBQs, every recipe is crafted with passion and premium ingredients.</p>
-    <div class="btn-wrapper">
-      <a href="about.html" class="btn">Learn More</a>
+  <section class="about-preview">
+    <div class="about-text">
+      <h2>About Crust & Crums</h2>
+      <p>We’re more than just a fast food spot — we’re a destination for food lovers. From juicy burgers to sizzling BBQs, every recipe is crafted with passion and premium ingredients.</p>
+      <div class="btn-wrapper">
+        <a href="about.html" class="btn">Learn More</a>
+      </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- 🔸 Footer -->
   <footer>
@@ -92,6 +91,14 @@
   </footer>
 
   <!-- JS -->
-  <script src="js/main.js"></script>
+  <script>
+    function orderNow(item) {
+      // Direct WhatsApp order link
+      const number = "923313787209";
+      const message = `Hi! I want to order: ${item}`;
+      window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`, "_blank");
+    }
+  </script>
+
 </body>
 </html>
