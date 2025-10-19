@@ -123,7 +123,7 @@
       <textarea id="wa_msg" rows="5" placeholder="Type your message here..." required></textarea>
       <div class="form-buttons">
         <button type="button" id="waSend" class="btn">Send to WhatsApp</button>
-        <a href="https://wa.me/923313787209" target="_blank" class="btn secondary">Open WhatsApp</a>
+        <a href="https://wa.me/923343610599" target="_blank" class="btn secondary">Open WhatsApp</a>
       </div>
     </form>
   </section>
@@ -153,7 +153,7 @@
       const name = document.getElementById('wa_name').value.trim();
       const msg = document.getElementById('wa_msg').value.trim();
       if (!msg) { alert('Please type a message before sending.'); return; }
-      const phone = '923313787209';
+      const phone = '923343610599';
       const text = encodeURIComponent((name ? ('Name: ' + name + '\n') : '') + msg);
       window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
     });

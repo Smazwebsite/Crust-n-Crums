@@ -135,91 +135,181 @@
   <!-- Menu Section -->
   <section>
     <div class="category-buttons">
-      <button class="active" data-category="burgers">🍔 Burgers</button>
+      <button class="active" data-category="bbq">🔥 Bar B.Q</button>
+      <button data-category="burgers">🍔 Burgers</button>
       <button data-category="rolls">🌯 Rolls</button>
       <button data-category="broast">🍗 Broast</button>
-      <button data-category="ala-cart">🥪 Ala Cart</button>
-      <button data-category="classic-pizza">🍕 Classic Pizza</button>
       <button data-category="premium-pizza">🍕 Premium Pizza</button>
-      <button data-category="bbq">🔥 Bar B.Q</button>
-      <button data-category="sauces">🥣 Sauces</button>
+      <button data-category="classic-pizza">🍕 Classic Pizza</button>
+      <button data-category="ala-cart">🥪 Ala Cart</button>
       <button data-category="fries">🍟 Fries</button>
       <button data-category="beverages">🥤 Beverages</button>
+      <button data-category="sauces">🥣 Sauces</button>
       <button data-category="extra-toppings">🧀 Extra Toppings</button>
     </div>
 
     <!-- Example Category -->
-    <div id="burgers" class="category active">
+     <!-- 7. Bar B.Q -->
+<div id="bbq" class="category active">
+  <h2>🔥 Bar B.Q</h2>
+  <div class="item-grid">
+
+    <!-- All Flavours Leg Tikka -->
+    <div class="item-card">
+      <img src="assets/images/Spicy-Chicken-Tikka.jpeg" alt="All Flavours Leg Tikka">
+      <h3>All Flavours Leg Tikka</h3>
+      <p class="price">Rs.350</p>
+      <button class="btn order-btn" onclick="orderNow('All Flavours Leg Tikka', 350)">Order Now</button>
+
+    </div>
+
+
+    <div class="item-card">
+      <img src="assets/images/Green-Chicken-Tikka.jpeg" alt="Green Chicken Tikka">
+      <h3>Green Chicken Tikka Chest</h3>
+      <p class="price">Rs.450</p>
+      <button class="btn order-btn" onclick="orderNow('Green Chicken Tikka Chest', 450)">Order Now</button>
+    </div>
+
+    <!-- Behari Tikka -->
+    <div class="item-card">
+      <img src="assets/images/Behari-Tikka.jpeg" alt="Behari Tikka">
+      <h3>Behari Tikka Chest</h3>
+      <p class="price">Rs.450</p>
+      <button class="btn order-btn" onclick="orderNow('Behari Tikka Chest', 450)">Order Now</button>
+    </div>
+
+    <!-- Malai Tikka -->
+    <div class="item-card">
+      <img src="assets/images/Malai-Tikka.jpeg" alt="Malai Tikka">
+      <h3>Malai Tikka Chest</h3>
+      <p class="price">Rs.450</p>
+      <button class="btn order-btn" onclick="orderNow('Malai Tikka Chest', 450)">Order Now</button>
+    </div>
+
+    <!-- Spicy Chicken Boti Boneless -->
+    <div class="item-card">
+      <img src="assets/images/Spicy-Chicken-Boti-Boneless.jpeg" alt="Spicy Chicken Boti Boneless">
+      <h3>Green Chicken Boti Boneless (5 Pcs)</h3>
+      <p class="price">Rs.250</p>
+      <button class="btn order-btn" onclick="orderNow('Green Chicken Boti Boneless (5 Pcs)', 250)">Order Now</button>
+    </div>
+
+    <!-- Behari Boti Boneless -->
+    <div class="item-card">
+      <img src="assets/images/Behari-Boti-Boneless.jpeg" alt="Behari Boti Boneless">
+      <h3>Behari Boti Boneless (5 Pcs)</h3>
+      <p class="price">Rs.250</p>
+      <button class="btn order-btn" onclick="orderNow('Behari Boti Boneless (5 Pcs)', 250)">Order Now</button>
+    </div>
+
+    <!-- Malai Boti Boneless -->
+    <div class="item-card">
+      <img src="assets/images/Malai-Boti-Boneless.jpeg" alt="Malai Boti Boneless">
+      <h3>Malai Boti Boneles (5 Pcs)</h3>
+      <p class="price">Rs.250</p>
+      <button class="btn order-btn" onclick="orderNow('Malai Boti Boneles (5 Pcs)', 250)">Order Now</button>
+    </div>
+
+
+    <!-- Reshmi Kabab Chicken -->
+    <div class="item-card">
+      <img src="assets/images/Reshmi-Kabab-Chicken.jpeg" alt="Reshmi Kabab Chicken">
+      <h3>Reshmi Kabab Chicken (1 Plate / 6 Pcs)</h3>
+      <p class="price">Rs.400</p>
+      <button class="btn order-btn" onclick="orderNow('Reshmi Kabab Chicken (1 Plate / 6 Pcs)', 400)">Order Now</button>
+    </div>
+
+    <!-- Reshmi Kabab Beef -->
+    <div class="item-card">
+      <img src="assets/images/Reshmi-Kabab-Beef.jpeg" alt="Reshmi Kabab Beef">
+      <h3>Reshmi Kabab Beef (1 Plate / 6 Pcs)</h3>
+      <p class="price">Rs.400</p>
+      <button class="btn order-btn" onclick="orderNow('Reshmi Kabab Beef (1 Plate / 6 Pcs)', 400)">Order Now</button>
+    </div>
+
+    <!-- Chicken Gola Kabab -->
+    <div class="item-card">
+      <img src="assets/images/Chicken-Gola-Kabab.jpeg" alt="Chicken Gola Kabab">
+      <h3>Chicken Gola Kabab (1 Plate / 6 Pcs)</h3>
+      <p class="price">Rs.250</p>
+      <button class="btn order-btn" onclick="orderNow('Chicken Gola Kabab (1 Plate / 6 Pcs)', 250)">Order Now</button>
+    </div>
+
+  </div>
+</div>
+
+    <div id="burgers" class="category">
   <h2>🍔 Burgers</h2>
   <div class="item-grid">
     <div class="item-card">
       <img src="assets/images/Premium-Spicy-Zinger-Burger.jpeg" alt="Premium Spicy Zinger Burger">
       <h3>Premium Spicy Zinger Burger</h3>
       <p class="price">Rs.450</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Premium Spicy Zinger Burger', 450)">Order Now</button>
     </div>
 
     <div class="item-card">
       <img src="assets/images/Peri-Peri-Sauce-Burger.jpg" alt="Peri Peri Sauce Burger">
       <h3>Peri Peri Sauce Burger</h3>
       <p class="price">Rs.450</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Peri Peri Sauce Burger', 450)">Order Now</button>
     </div>
 
     <div class="item-card">
       <img src="assets/images/Creamy-Mild-Burger.jpg" alt="Creamy Mild Burger">
       <h3>Creamy Mild Burger</h3>
       <p class="price">Rs.430</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Creamy Mild Burger', 430)">Order Now</button>
     </div>
 
     <div class="item-card">
       <img src="assets/images/Tangy-Burger.jpg" alt="Tangy Burger">
       <h3>Tangy Burger</h3>
       <p class="price">Rs.430</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Tangy Burger', 430)">Order Now</button>
     </div>
 
     <div class="item-card">
       <img src="assets/images/Zinger-Burger.jpeg" alt="Zinger Burger">
       <h3>Zinger Burger</h3>
-      <p class="price">Rs.380</p>
-      <button class="btn order-btn">Order Now</button>
+      <p class="price">Rs.350</p>
+      <button class="btn order-btn" onclick="orderNow('Zinger Burger', 350)">Order Now</button>
     </div>
 
     <div class="item-card">
       <img src="assets/images/Mighty-Zinger-Burger-with-Cheese.jpeg" alt="Mighty Zinger Burger with Cheese">
       <h3>Mighty Zinger Burger with Cheese</h3>
       <p class="price">Rs.700</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Mighty Zinger Burger with Cheese', 700)">Order Now</button>
     </div>
 
     <div class="item-card">
       <img src="assets/images/Zinger-Tower-Burger.jpeg" alt="Zinger Tower Burger">
       <h3>Zinger Tower Burger</h3>
       <p class="price">Rs.850</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Zinger Tower Burger', 850)">Order Now</button>
     </div>
 
     <div class="item-card">
       <img src="assets/images/Pizza-Zinger-Burger.jpeg" alt="Pizza Zinger Burger">
       <h3>Pizza Zinger Burger</h3>
       <p class="price">Rs.500</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Pizza Zinger Burger', 500)">Order Now</button>
     </div>
 
     <div class="item-card">
       <img src="assets/images/Chicken-Chapli-Kabab-Burger.jpeg" alt="Chicken Chapli Kabab Burger">
       <h3>Chicken Chapli Kabab Burger</h3>
       <p class="price">Rs.300</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Chicken Chapli Kabab Burger', 300)">Order Now</button>
     </div>
 
     <div class="item-card">
       <img src="assets/images/Patty-Burger.jpeg" alt="Patty Burger">
       <h3>Patty Burger</h3>
       <p class="price">Rs.250</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Patty Burger', 250)">Order Now</button>
     </div>
   </div>
 </div>
@@ -228,73 +318,80 @@
   <h2>🌯 Rolls</h2>
   <div class="item-grid">
     <div class="item-card">
-      <img src="assets/images/Special-Zinger-Cheese-Roll.jpeg" alt="Special Zinger Cheese Roll">
-      <h3>Special Zinger Cheese Roll</h3>
-      <p class="price">Rs.300</p>
-      <button class="btn order-btn">Order Now</button>
-    </div>
-
-    <div class="item-card">
       <img src="assets/images/Max-Roll.jpeg" alt="Max Roll">
       <h3>Max Roll</h3>
       <p class="price">Rs.300</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Max Roll', 300)">Order Now</button>
+    </div>
+
+    <div class="item-card">
+      <img src="assets/images/Special-Zinger-Cheese-Roll.jpeg" alt="Special Zinger Cheese Roll">
+      <h3>Special Zinger Cheese Roll</h3>
+      <p class="price">Rs.270</p>
+      <button class="btn order-btn" onclick="orderNow('Special Zinger Cheese Roll', 270)">Order Now</button>
     </div>
 
     <div class="item-card">
       <img src="assets/images/Special-Zinger-Roll.jpeg" alt="Special Zinger Roll">
       <h3>Special Zinger Roll</h3>
-      <p class="price">Rs.250</p>
-      <button class="btn order-btn">Order Now</button>
-    </div>
-
-    <div class="item-card">
-      <img src="assets/images/Chicken-Behari-Roll.jpeg" alt="Chicken Behari Roll">
-      <h3>Chicken Behari Roll</h3>
-      <p class="price">Rs.250</p>
-      <button class="btn order-btn">Order Now</button>
-    </div>
-
-    <div class="item-card">
-      <img src="assets/images/Chicken-Chatni-Roll.jpeg" alt="Chicken Chatni Roll">
-      <h3>Chicken Chatni Roll</h3>
-      <p class="price">Rs.250</p>
-      <button class="btn order-btn">Order Now</button>
-    </div>
-
-    <div class="item-card">
-      <img src="assets/images/Garlic-Mayo-Roll.jpeg" alt="Garlic Mayo Roll">
-      <h3>Garlic Mayo Roll</h3>
-      <p class="price">Rs.250</p>
-      <button class="btn order-btn">Order Now</button>
+      <p class="price">Rs.220</p>
+      <button class="btn order-btn" onclick="orderNow('Special Zinger Roll', 220)">Order Now</button>
     </div>
 
     <div class="item-card">
       <img src="assets/images/Peri-Peri-Sauce-Roll.jpeg" alt="Peri Peri Sauce Roll">
       <h3>Peri Peri Sauce Roll</h3>
       <p class="price">Rs.250</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Peri Peri Sauce Roll', 250)">Order Now</button>
     </div>
 
     <div class="item-card">
       <img src="assets/images/Special-Pizza-Roll.jpeg" alt="Special Pizza Roll">
       <h3>Special Pizza Roll</h3>
       <p class="price">Rs.450</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Special Pizza Roll', 450)">Order Now</button>
+    </div>
+
+    <div class="item-card">
+      <img src="assets/images/Chicken-Green-Boti-Roll.jpeg" alt="Chicken Green Boti Roll">
+      <h3>Chicken Green Boti Roll</h3>
+      <p class="price">Rs.250</p>
+      <button class="btn order-btn" onclick="orderNow('Chicken Green Boti Roll', 250)">Order Now</button>
+    </div>
+
+    <div class="item-card">
+      <img src="assets/images/Chicken-Behari-Roll.jpeg" alt="Chicken Behari Roll">
+      <h3>Chicken Behari Roll</h3>
+      <p class="price">Rs.250</p>
+      <button class="btn order-btn" onclick="orderNow('Chicken Behari Roll', 250)">Order Now</button>
+    </div>
+
+    <div class="item-card">
+      <img src="assets/images/Chicken-Chatni-Roll.jpeg" alt="Chicken Chatni Roll">
+      <h3>Chicken Chatni Roll</h3>
+      <p class="price">Rs.250</p>
+      <button class="btn order-btn" onclick="orderNow('Chicken Chatni Roll', 250)">Order Now</button>
+    </div>
+
+    <div class="item-card">
+      <img src="assets/images/Garlic-Mayo-Roll.jpeg" alt="Garlic Mayo Roll">
+      <h3>Garlic Mayo Roll</h3>
+      <p class="price">Rs.250</p>
+      <button class="btn order-btn" onclick="orderNow('Garlic Mayo Roll', 250)">Order Now</button>
     </div>
 
     <div class="item-card">
       <img src="assets/images/Chicken-Malai-Boti-Roll.jpeg" alt="Chicken Malai Boti Roll">
       <h3>Chicken Malai Boti Roll</h3>
       <p class="price">Rs.270</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Chicken Malai Boti Roll', 270)">Order Now</button>
     </div>
 
     <div class="item-card">
       <img src="assets/images/Kabab-Roll-Beef-Chicken.jpeg" alt="Kabab Roll Beef/Chicken">
       <h3>Kabab Roll Beef/Chicken</h3>
-      <p class="price">Rs.200</p>
-      <button class="btn order-btn">Order Now</button>
+      <p class="price">Rs.150</p>
+      <button class="btn order-btn" onclick="orderNow('Kabab Roll Beef/Chicken', 150)">Order Now</button>
     </div>
   </div>
 </div>
@@ -309,35 +406,35 @@
       <img src="assets/images/Qtr-Leg-Broast.jpeg" alt="Quarter Leg Broast">
       <h3>Quarter Leg Broast</h3>
       <p class="price">Rs.400</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Quarter Leg Broast', 400)">Order Now</button>
     </div>
 
     <div class="item-card">
       <img src="assets/images/Qtr-Chest-Broast.jpeg" alt="Quarter Chest Broast">
       <h3>Quarter Chest Broast</h3>
       <p class="price">Rs.450</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Quarter Chest Broast', 450)">Order Now</button>
     </div>
 
     <div class="item-card">
       <img src="assets/images/Half-Broast.jpeg" alt="Half Broast">
       <h3>Half Broast</h3>
       <p class="price">Rs.830</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Half Broast', 830)">Order Now</button>
     </div>
 
     <div class="item-card">
       <img src="assets/images/Full-Broast.jpeg" alt="Full Broast">
       <h3>Full Broast</h3>
       <p class="price">Rs.1650</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Full Broast', 1650)">Order Now</button>
     </div>
 
     <div class="item-card">
       <img src="assets/images/Drum-Sticks.png" alt="Drum Stick (1 Pc)">
       <h3>Drum Stick (1 Pc)</h3>
       <p class="price">Rs.150</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Drum Stick (1 Pc)', 150)">Order Now</button>
     </div>
 
   </div>
@@ -353,84 +450,84 @@
       <img src="assets/images/Club-Sandwich.jpeg" alt="Club Sandwich">
       <h3>Club Sandwich</h3>
       <p class="price">Rs.400</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Club Sandwich', 400)">Order Now</button>
+    </div>
+
+    <div class="item-card">
+      <img src="assets/images/Malai-Boti-Sandwich.jpeg" alt="Malai Boti Sandwich">
+      <h3>Malai Boti Sandwich</h3>
+      <p class="price">Rs.450</p>
+      <button class="btn order-btn" onclick="orderNow('Malai Boti Sandwich', 450)">Order Now</button>
     </div>
 
     <div class="item-card">
       <img src="assets/images/Mexican-Sandwich.png" alt="Mexican Sandwich">
       <h3>Mexican Sandwich</h3>
       <p class="price">Rs.500</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Mexican Sandwich', 500)">Order Now</button>
     </div>
 
     <div class="item-card">
       <img src="assets/images/Spring-Rolls.jpeg" alt="Spring Rolls">
       <h3>Spring Rolls</h3>
       <p class="price">Rs.500</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Spring Rolls', 500)">Order Now</button>
     </div>
 
     <div class="item-card">
       <img src="assets/images/Macroni-Pasta-Large.png" alt="Macroni Pasta Large">
       <h3>Macroni Pasta (Large)</h3>
       <p class="price">Rs.650</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Macroni Pasta (Large)', 650)">Order Now</button>
     </div>
 
     <div class="item-card">
       <img src="assets/images/Macroni-Pasta-Small.png" alt="Macroni Pasta Small">
       <h3>Macroni Pasta (Small)</h3>
       <p class="price">Rs.350</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Macroni Pasta (Small)', 350)">Order Now</button>
     </div>
 
     <div class="item-card">
       <img src="assets/images/Oven-Backed-Wings-6Pcs.jpeg" alt="Oven Backed Wings 6Pcs">
       <h3>Oven Backed Wings (6 Pcs)</h3>
       <p class="price">Rs.350</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Oven Backed Wings (6 Pcs)', 350)">Order Now</button>
     </div>
 
     <div class="item-card">
       <img src="assets/images/Oven-Backed-Wings-12Pcs.jpeg" alt="Oven Backed Wings 12Pcs">
       <h3>Oven Backed Wings (12 Pcs)</h3>
       <p class="price">Rs.650</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Oven Backed Wings (12 Pcs)', 650)">Order Now</button>
     </div>
 
     <div class="item-card">
       <img src="assets/images/Crispy-Wings-6Pcs.jpeg" alt="Crispy Wings 6Pcs">
       <h3>Crispy Wings (6 Pcs)</h3>
       <p class="price">Rs.350</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Crispy Wings (6 Pcs)', 350)">Order Now</button>
     </div>
 
     <div class="item-card">
       <img src="assets/images/Crispy-Wings-12Pcs.jpeg" alt="Crispy Wings 12Pcs">
       <h3>Crispy Wings (12 Pcs)</h3>
       <p class="price">Rs.650</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Crispy Wings (12 Pcs)', 650)">Order Now</button>
     </div>
 
     <div class="item-card">
       <img src="assets/images/Hotshot-10Pcs.jpeg" alt="Hotshot 10Pcs">
       <h3>Hotshot (10 Pcs)</h3>
       <p class="price">Rs.450</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Hotshot (10 Pcs)', 450)">Order Now</button>
     </div>
 
     <div class="item-card">
       <img src="assets/images/Hotshot-5Pcs.jpeg" alt="Hotshot 5Pcs">
       <h3>Hotshot (5 Pcs)</h3>
       <p class="price">Rs.250</p>
-      <button class="btn order-btn">Order Now</button>
-    </div>
-
-    <div class="item-card">
-      <img src="assets/images/Malai-Boti-Sandwich.jpeg" alt="Malai Boti Sandwich">
-      <h3>Malai Boti Sandwich</h3>
-      <p class="price">Rs.500</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Hotshot (5 Pcs)', 250)">Order Now</button>
     </div>
 
   </div>
@@ -446,25 +543,25 @@
       <img src="assets/images/Chicken-Fajita-Pizza.jpeg" alt="Chicken Fajita Pizza">
       <h3>Chicken Fajita Pizza (Small)</h3>
       <p class="price">Rs.450</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Chicken Fajita Pizza (Small)', 450)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Chicken-Fajita-Pizza.jpeg" alt="Chicken Fajita Pizza">
       <h3>Chicken Fajita Pizza (Medium)</h3>
       <p class="price">Rs.800</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Chicken Fajita Pizza (Medium)', 800)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Chicken-Fajita-Pizza.jpeg" alt="Chicken Fajita Pizza">
       <h3>Chicken Fajita Pizza (Large)</h3>
       <p class="price">Rs.1050</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Chicken Fajita Pizza (Large)', 1050)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Chicken-Fajita-Pizza.jpeg" alt="Chicken Fajita Pizza">
       <h3>Chicken Fajita Pizza (Jumbo)</h3>
       <p class="price">Rs.1250</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Chicken Fajita Pizza (Jumbo)', 1250)">Order Now</button>
     </div>
 
     <!-- Chicken Tikka -->
@@ -472,25 +569,25 @@
       <img src="assets/images/Chicken-Tikka-Pizza.jpeg" alt="Chicken Tikka Pizza">
       <h3>Chicken Tikka Pizza (Small)</h3>
       <p class="price">Rs.450</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Chicken Tikka Pizza (Small)', 450)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Chicken-Tikka-Pizza.jpeg" alt="Chicken Tikka Pizza">
       <h3>Chicken Tikka Pizza (Medium)</h3>
       <p class="price">Rs.800</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Chicken Tikka Pizza (Medium)', 800)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Chicken-Tikka-Pizza.jpeg" alt="Chicken Tikka Pizza">
       <h3>Chicken Tikka Pizza (Large)</h3>
       <p class="price">Rs.1050</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Chicken Tikka Pizza (Large)', 1050)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Chicken-Tikka-Pizza.jpeg" alt="Chicken Tikka Pizza">
       <h3>Chicken Tikka Pizza (Jumbo)</h3>
       <p class="price">Rs.1250</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Chicken Tikka Pizza (Jumbo)', 1250)">Order Now</button>
     </div>
 
     <!-- Bonefire Pizza -->
@@ -498,25 +595,25 @@
       <img src="assets/images/Bonefire-Pizza.jpeg" alt="Bonefire Pizza">
       <h3>Bonefire Pizza (Small)</h3>
       <p class="price">Rs.450</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Bonefire Pizza (Small)', 450)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Bonefire-Pizza.jpeg" alt="Bonefire Pizza">
       <h3>Bonefire Pizza (Medium)</h3>
       <p class="price">Rs.800</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Bonefire Pizza (Medium)', 800)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Bonefire-Pizza.jpeg" alt="Bonefire Pizza">
       <h3>Bonefire Pizza (Large)</h3>
       <p class="price">Rs.1050</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Bonefire Pizza (Large)', 1050)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Bonefire-Pizza.jpeg" alt="Bonefire Pizza">
       <h3>Bonefire Pizza (Jumbo)</h3>
       <p class="price">Rs.1250</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Bonefire Pizza (Jumbo)', 1250)">Order Now</button>
     </div>
 
     <!-- Creamy Pizza -->
@@ -524,80 +621,77 @@
       <img src="assets/images/Creamy-Pizza.jpeg" alt="Creamy Pizza">
       <h3>Creamy Pizza (Small)</h3>
       <p class="price">Rs.450</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Creamy Pizza (Small)', 450)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Creamy-Pizza.jpeg" alt="Creamy Pizza">
       <h3>Creamy Pizza (Medium)</h3>
       <p class="price">Rs.800</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Creamy Pizza (Medium)', 800)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Creamy-Pizza.jpeg" alt="Creamy Pizza">
       <h3>Creamy Pizza (Large)</h3>
       <p class="price">Rs.1050</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Creamy Pizza (Large)', 1050)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Creamy-Pizza.jpeg" alt="Creamy Pizza">
       <h3>Creamy Pizza (Jumbo)</h3>
       <p class="price">Rs.1250</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Creamy Pizza (Jumbo)', 1250)">Order Now</button>
     </div>
 
-    <!-- Cheese Lover Pizza -->
-    <div class="item-card">
-      <img src="assets/images/Cheese-Lover-Pizza.jpeg" alt="Cheese Lover Pizza">
-      <h3>Cheese Lover Pizza (Small)</h3>
-      <p class="price">Rs.450</p>
-      <button class="btn order-btn">Order Now</button>
-    </div>
-    <div class="item-card">
-      <img src="assets/images/Cheese-Lover-Pizza.jpeg" alt="Cheese Lover Pizza">
-      <h3>Cheese Lover Pizza (Medium)</h3>
-      <p class="price">Rs.800</p>
-      <button class="btn order-btn">Order Now</button>
-    </div>
-    <div class="item-card">
-      <img src="assets/images/Cheese-Lover-Pizza.jpeg" alt="Cheese Lover Pizza">
-      <h3>Cheese Lover Pizza (Large)</h3>
-      <p class="price">Rs.1050</p>
-      <button class="btn order-btn">Order Now</button>
-    </div>
-    <div class="item-card">
-      <img src="assets/images/Cheese-Lover-Pizza.jpeg" alt="Cheese Lover Pizza">
-      <h3>Cheese Lover Pizza (Jumbo)</h3>
-      <p class="price">Rs.1250</p>
-      <button class="btn order-btn">Order Now</button>
-    </div>
+    <!-- 🍕 Cheese Lover Pizza -->
+<div class="item-card">
+  <img src="assets/images/Cheese-Lover-Pizza.jpeg" alt="Cheese Lover Pizza">
+  <h3>Cheese Lover Pizza (Small)</h3>
+  <p class="price">Rs.450</p>
+  <button class="btn order-btn" onclick="orderNow('Cheese Lover Pizza (Small)', 450)">Order Now</button>
+</div>
+<div class="item-card">
+  <img src="assets/images/Cheese-Lover-Pizza.jpeg" alt="Cheese Lover Pizza">
+  <h3>Cheese Lover Pizza (Medium)</h3>
+  <p class="price">Rs.800</p>
+  <button class="btn order-btn" onclick="orderNow('Cheese Lover Pizza (Medium)', 800)">Order Now</button>
+</div>
+<div class="item-card">
+  <img src="assets/images/Cheese-Lover-Pizza.jpeg" alt="Cheese Lover Pizza">
+  <h3>Cheese Lover Pizza (Large)</h3>
+  <p class="price">Rs.1050</p>
+  <button class="btn order-btn" onclick="orderNow('Cheese Lover Pizza (Large)', 1050)">Order Now</button>
+</div>
+<div class="item-card">
+  <img src="assets/images/Cheese-Lover-Pizza.jpeg" alt="Cheese Lover Pizza">
+  <h3>Cheese Lover Pizza (Jumbo)</h3>
+  <p class="price">Rs.1250</p>
+  <button class="btn order-btn" onclick="orderNow('Cheese Lover Pizza (Jumbo)', 1250)">Order Now</button>
+</div>
 
-    <!-- Vegetable Lover Pizza -->
-    <div class="item-card">
-      <img src="assets/images/Vegetable-Lover-Pizza.jpeg" alt="Vegetable Lover Pizza">
-      <h3>Vegetable Lover Pizza (Small)</h3>
-      <p class="price">Rs.450</p>
-      <button class="btn order-btn">Order Now</button>
-    </div>
-    <div class="item-card">
-      <img src="assets/images/Vegetable-Lover-Pizza.jpeg" alt="Vegetable Lover Pizza">
-      <h3>Vegetable Lover Pizza (Medium)</h3>
-      <p class="price">Rs.800</p>
-      <button class="btn order-btn">Order Now</button>
-    </div>
-    <div class="item-card">
-      <img src="assets/images/Vegetable-Lover-Pizza.jpeg" alt="Vegetable Lover Pizza">
-      <h3>Vegetable Lover Pizza (Large)</h3>
-      <p class="price">Rs.1050</p>
-      <button class="btn order-btn">Order Now</button>
-    </div>
-    <div class="item-card">
-      <img src="assets/images/Vegetable-Lover-Pizza.jpeg" alt="Vegetable Lover Pizza">
-      <h3>Vegetable Lover Pizza (Jumbo)</h3>
-      <p class="price">Rs.1250</p>
-      <button class="btn order-btn">Order Now</button>
-    </div>
-
-  </div>
+<!-- 🥦 Vegetable Lover Pizza -->
+<div class="item-card">
+  <img src="assets/images/Vegetable-Lover-Pizza.jpeg" alt="Vegetable Lover Pizza">
+  <h3>Vegetable Lover Pizza (Small)</h3>
+  <p class="price">Rs.450</p>
+  <button class="btn order-btn" onclick="orderNow('Vegetable Lover Pizza (Small)', 450)">Order Now</button>
+</div>
+<div class="item-card">
+  <img src="assets/images/Vegetable-Lover-Pizza.jpeg" alt="Vegetable Lover Pizza">
+  <h3>Vegetable Lover Pizza (Medium)</h3>
+  <p class="price">Rs.800</p>
+  <button class="btn order-btn" onclick="orderNow('Vegetable Lover Pizza (Medium)', 800)">Order Now</button>
+</div>
+<div class="item-card">
+  <img src="assets/images/Vegetable-Lover-Pizza.jpeg" alt="Vegetable Lover Pizza">
+  <h3>Vegetable Lover Pizza (Large)</h3>
+  <p class="price">Rs.1050</p>
+  <button class="btn order-btn" onclick="orderNow('Vegetable Lover Pizza (Large)', 1050)">Order Now</button>
+</div>
+<div class="item-card">
+  <img src="assets/images/Vegetable-Lover-Pizza.jpeg" alt="Vegetable Lover Pizza">
+  <h3>Vegetable Lover Pizza (Jumbo)</h3>
+  <p class="price">Rs.1250</p>
+  <button class="btn order-btn" onclick="orderNow('Vegetable Lover Pizza (Jumbo)', 1250)">Order Now</button>
 </div>
 
 
@@ -616,19 +710,19 @@
       <img src="assets/images/Special-Crown-Crust-Pizza.png" alt="Special Crown Crust Pizza">
       <h3>Special Crown Crust Pizza (Medium)</h3>
       <p class="price">Rs.1000</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Special Crown Crust Pizza (Medium)', 1000)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Special-Crown-Crust-Pizza.png" alt="Special Crown Crust Pizza">
       <h3>Special Crown Crust Pizza (Large)</h3>
       <p class="price">Rs.1200</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Special Crown Crust Pizza (Large)', 1200)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Special-Crown-Crust-Pizza.png" alt="Special Crown Crust Pizza">
       <h3>Special Crown Crust Pizza (Jumbo)</h3>
       <p class="price">Rs.1400</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Special Crown Crust Pizza (Jumbo)', 1400)">Order Now</button>
     </div>
 
     <!-- Special Kabab Crust Pizza -->
@@ -636,25 +730,25 @@
       <img src="assets/images/Special-Kabab-Crust-Pizza.jpeg" alt="Special Kabab Crust Pizza">
       <h3>Special Kabab Crust Pizza (Small)</h3>
       <p class="price">Rs.500</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Special Kabab Crust Pizza (Small)', 500)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Special-Kabab-Crust-Pizza.jpeg" alt="Special Kabab Crust Pizza">
       <h3>Special Kabab Crust Pizza (Medium)</h3>
       <p class="price">Rs.1000</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Special Kabab Crust Pizza (Medium)', 1000)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Special-Kabab-Crust-Pizza.jpeg" alt="Special Kabab Crust Pizza">
       <h3>Special Kabab Crust Pizza (Large)</h3>
       <p class="price">Rs.1200</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Special Kabab Crust Pizza (Large)', 1200)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Special-Kabab-Crust-Pizza.jpeg" alt="Special Kabab Crust Pizza">
       <h3>Special Kabab Crust Pizza (Jumbo)</h3>
       <p class="price">Rs.1400</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Special Kabab Crust Pizza (Jumbo)', 1400)">Order Now</button>
     </div>
 
     <!-- Special Sauce Crust Pizza -->
@@ -662,25 +756,25 @@
       <img src="assets/images/Special-Sauce-Crust-Pizza.jpeg" alt="Special Sauce Crust Pizza">
       <h3>Special Sauce Crust Pizza (Small)</h3>
       <p class="price">Rs.500</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Special Sauce Crust Pizza (Small)', 500)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Special-Sauce-Crust-Pizza.jpeg" alt="Special Sauce Crust Pizza">
       <h3>Special Sauce Crust Pizza (Medium)</h3>
       <p class="price">Rs.1000</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Special Sauce Crust Pizza (Medium)', 1000)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Special-Sauce-Crust-Pizza.jpeg" alt="Special Sauce Crust Pizza">
       <h3>Special Sauce Crust Pizza (Large)</h3>
       <p class="price">Rs.1200</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Special Sauce Crust Pizza (Large)', 1200)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Special-Sauce-Crust-Pizza.jpeg" alt="Special Sauce Crust Pizza">
       <h3>Special Sauce Crust Pizza (Jumbo)</h3>
       <p class="price">Rs.1400</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Special Sauce Crust Pizza (Jumbo)', 1400)">Order Now</button>
     </div>
 
     <!-- Chicken Supreme Pizza -->
@@ -688,25 +782,25 @@
       <img src="assets/images/Chicken-Supreme-Pizza.jpeg" alt="Chicken Supreme Pizza">
       <h3>Chicken Supreme Pizza (Small)</h3>
       <p class="price">Rs.500</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Chicken Supreme Pizza (Small)', 500)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Chicken-Supreme-Pizza.jpeg" alt="Chicken Supreme Pizza">
       <h3>Chicken Supreme Pizza (Medium)</h3>
       <p class="price">Rs.1000</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Chicken Supreme Pizza (Medium)', 1000)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Chicken-Supreme-Pizza.jpeg" alt="Chicken Supreme Pizza">
       <h3>Chicken Supreme Pizza (Large)</h3>
       <p class="price">Rs.1200</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Chicken Supreme Pizza (Large)', 1200)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Chicken-Supreme-Pizza.jpeg" alt="Chicken Supreme Pizza">
       <h3>Chicken Supreme Pizza (Jumbo)</h3>
       <p class="price">Rs.1400</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Chicken Supreme Pizza (Jumbo)', 1400)">Order Now</button>
     </div>
 
     <!-- Zinger Crunchy Pizza -->
@@ -714,25 +808,25 @@
       <img src="assets/images/Zinger-Crunchy-Pizza.jpeg" alt="Zinger Crunchy Pizza">
       <h3>Zinger Crunchy Pizza (Small)</h3>
       <p class="price">Rs.500</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Zinger Crunchy Pizza (Small)', 500)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Zinger-Crunchy-Pizza.jpeg" alt="Zinger Crunchy Pizza">
       <h3>Zinger Crunchy Pizza (Medium)</h3>
       <p class="price">Rs.1000</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Zinger Crunchy Pizza (Medium)', 1000)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Zinger-Crunchy-Pizza.jpeg" alt="Zinger Crunchy Pizza">
       <h3>Zinger Crunchy Pizza (Large)</h3>
       <p class="price">Rs.1200</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Zinger Crunchy Pizza (Large)', 1200)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Zinger-Crunchy-Pizza.jpeg" alt="Zinger Crunchy Pizza">
       <h3>Zinger Crunchy Pizza (Jumbo)</h3>
       <p class="price">Rs.1400</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Zinger Crunchy Pizza (Jumbo)', 1400)">Order Now</button>
     </div>
 
     <!-- Peri Peri Sauce Pizza -->
@@ -740,25 +834,25 @@
       <img src="assets/images/Peri-Peri-Sauce-Pizza.jpeg" alt="Peri Peri Sauce Pizza">
       <h3>Peri Peri Sauce Pizza (Small)</h3>
       <p class="price">Rs.500</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Peri Peri Sauce Pizza (Small)', 500)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Peri-Peri-Sauce-Pizza.jpeg" alt="Peri Peri Sauce Pizza">
       <h3>Peri Peri Sauce Pizza (Medium)</h3>
       <p class="price">Rs.1000</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Peri Peri Sauce Pizza (Medium)', 1000)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Peri-Peri-Sauce-Pizza.jpeg" alt="Peri Peri Sauce Pizza">
       <h3>Peri Peri Sauce Pizza (Large)</h3>
       <p class="price">Rs.1200</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Peri Peri Sauce Pizza (Large)', 1200)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Peri-Peri-Sauce-Pizza.jpeg" alt="Peri Peri Sauce Pizza">
       <h3>Peri Peri Sauce Pizza (Jumbo)</h3>
       <p class="price">Rs.1400</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Peri Peri Sauce Pizza (Jumbo)', 1400)">Order Now</button>
     </div>
 
     <!-- Behari Kabab Pizza -->
@@ -766,25 +860,25 @@
       <img src="assets/images/Behari-Kabab-Pizza.jpeg" alt="Behari Kabab Pizza">
       <h3>Behari Kabab Pizza (Small)</h3>
       <p class="price">Rs.500</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Behari Kabab Pizza (Small)', 500)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Behari-Kabab-Pizza.jpeg" alt="Behari Kabab Pizza">
       <h3>Behari Kabab Pizza (Medium)</h3>
       <p class="price">Rs.1000</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Behari Kabab Pizza (Medium)', 1000)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Behari-Kabab-Pizza.jpeg" alt="Behari Kabab Pizza">
       <h3>Behari Kabab Pizza (Large)</h3>
       <p class="price">Rs.1200</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Behari Kabab Pizza (Large)', 1200)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Behari-Kabab-Pizza.jpeg" alt="Behari Kabab Pizza">
       <h3>Behari Kabab Pizza (Jumbo)</h3>
       <p class="price">Rs.1400</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Behari Kabab Pizza (Jumbo)', 1400)">Order Now</button>
     </div>
 
     <!-- Italian Star Pizza -->
@@ -792,25 +886,25 @@
       <img src="assets/images/Italian-Star-Pizza.jpeg" alt="Italian Star Pizza">
       <h3>Italian Star Pizza (Small)</h3>
       <p class="price">Rs.500</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Italian Star Pizza (Small)', 500)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Italian-Star-Pizza.jpeg" alt="Italian Star Pizza">
       <h3>Italian Star Pizza (Medium)</h3>
       <p class="price">Rs.1000</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Italian Star Pizza (Medium)', 1000)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Italian-Star-Pizza.jpeg" alt="Italian Star Pizza">
       <h3>Italian Star Pizza (Large)</h3>
       <p class="price">Rs.1200</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Italian Star Pizza (Large)', 1200)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Italian-Star-Pizza.jpeg" alt="Italian Star Pizza">
       <h3>Italian Star Pizza (Jumbo)</h3>
       <p class="price">Rs.1400</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Italian Star Pizza (Jumbo)', 1400)">Order Now</button>
     </div>
 
     <!-- Lava Pizza -->
@@ -818,127 +912,29 @@
       <img src="assets/images/Lava-Pizza.jpeg" alt="Lava Pizza">
       <h3>Lava Pizza (Small)</h3>
       <p class="price">Rs.550</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Lava Pizza (Small)', 550)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Lava-Pizza.jpeg" alt="Lava Pizza">
       <h3>Lava Pizza (Medium)</h3>
       <p class="price">Rs.1050</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Lava Pizza (Medium)', 1050)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Lava-Pizza.jpeg" alt="Lava Pizza">
       <h3>Lava Pizza (Large)</h3>
       <p class="price">Rs.1250</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Lava Pizza (Large)', 1250)">Order Now</button>
     </div>
     <div class="item-card">
       <img src="assets/images/Lava-Pizza.jpeg" alt="Lava Pizza">
       <h3>Lava Pizza (Jumbo)</h3>
       <p class="price">Rs.1450</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Lava Pizza (Jumbo)', 1450)">Order Now</button>
     </div>
 
   </div>
 </div>
-
-
-<!-- 7. Bar B.Q -->
-<div id="bbq" class="category">
-  <h2>🔥 Bar B.Q</h2>
-  <div class="item-grid">
-
-    <!-- Spicy Chicken Tikka -->
-    <div class="item-card">
-      <img src="assets/images/Spicy-Chicken-Tikka.jpeg" alt="Spicy Chicken Tikka">
-      <h3>Spicy Chicken Tikka</h3>
-      <p class="price">Rs.450</p>
-      <button class="btn order-btn">Order Now</button>
-    </div>
-
-    <!-- Behari Tikka -->
-    <div class="item-card">
-      <img src="assets/images/Behari-Tikka.jpeg" alt="Behari Tikka">
-      <h3>Behari Tikka</h3>
-      <p class="price">Rs.450</p>
-      <button class="btn order-btn">Order Now</button>
-    </div>
-
-    <!-- Malai Tikka -->
-    <div class="item-card">
-      <img src="assets/images/Malai-Tikka.jpeg" alt="Malai Tikka">
-      <h3>Malai Tikka</h3>
-      <p class="price">Rs.450</p>
-      <button class="btn order-btn">Order Now</button>
-    </div>
-
-    <!-- Spicy Chicken Boti Boneless -->
-    <div class="item-card">
-      <img src="assets/images/Spicy-Chicken-Boti-Boneless.jpeg" alt="Spicy Chicken Boti Boneless">
-      <h3>Spicy Chicken Boti Boneless</h3>
-      <p class="price">Rs.450</p>
-      <button class="btn order-btn">Order Now</button>
-    </div>
-
-    <!-- Behari Boti Boneless -->
-    <div class="item-card">
-      <img src="assets/images/Behari-Boti-Boneless.jpeg" alt="Behari Boti Boneless">
-      <h3>Behari Boti Boneless</h3>
-      <p class="price">Rs.300</p>
-      <button class="btn order-btn">Order Now</button>
-    </div>
-
-    <!-- Malai Boti Boneless -->
-    <div class="item-card">
-      <img src="assets/images/Malai-Boti-Boneless.jpeg" alt="Malai Boti Boneless">
-      <h3>Malai Boti Boneless</h3>
-      <p class="price">Rs.300</p>
-      <button class="btn order-btn">Order Now</button>
-    </div>
-
-    <!-- Beef Boti Boneless -->
-    <div class="item-card">
-      <img src="assets/images/Beef-Boti-Boneless.jpeg" alt="Beef Boti Boneless">
-      <h3>Beef Boti Boneless</h3>
-      <p class="price">Rs.300</p>
-      <button class="btn order-btn">Order Now</button>
-    </div>
-
-    <!-- Chicken Green Boti with Bone -->
-    <div class="item-card">
-      <img src="assets/images/Chicken-Green-Boti-with-Bone.jpeg" alt="Chicken Green Boti with Bone">
-      <h3>Chicken Green Boti with Bone</h3>
-      <p class="price">Rs.250</p>
-      <button class="btn order-btn">Order Now</button>
-    </div>
-
-    <!-- Reshmi Kabab Chicken -->
-    <div class="item-card">
-      <img src="assets/images/Reshmi-Kabab-Chicken.jpeg" alt="Reshmi Kabab Chicken">
-      <h3>Reshmi Kabab Chicken (2 Pcs)</h3>
-      <p class="price">Rs.250</p>
-      <button class="btn order-btn">Order Now</button>
-    </div>
-
-    <!-- Reshmi Kabab Beef -->
-    <div class="item-card">
-      <img src="assets/images/Reshmi-Kabab-Beef.jpeg" alt="Reshmi Kabab Beef">
-      <h3>Reshmi Kabab Beef (2 Pcs)</h3>
-      <p class="price">Rs.250</p>
-      <button class="btn order-btn">Order Now</button>
-    </div>
-
-    <!-- Chicken Gola Kabab -->
-    <div class="item-card">
-      <img src="assets/images/Chicken-Gola-Kabab.jpeg" alt="Chicken Gola Kabab">
-      <h3>Chicken Gola Kabab (4 Pcs)</h3>
-      <p class="price">Rs.300</p>
-      <button class="btn order-btn">Order Now</button>
-    </div>
-
-  </div>
-</div>
-
 
 
 <!-- 8. Sauces -->
@@ -951,7 +947,7 @@
       <img src="assets/images/Special-Sauce.png" alt="Special Sauce">
       <h3>Special Sauce</h3>
       <p class="price">Rs.100</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Special Sauce', 100)">Order Now</button>
     </div>
 
     <!-- Peri Peri Sauce -->
@@ -959,7 +955,7 @@
       <img src="assets/images/Peri-Peri-Sauce.png" alt="Peri Peri Sauce">
       <h3>Peri Peri Sauce</h3>
       <p class="price">Rs.70</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Peri Peri Sauce', 70)">Order Now</button>
     </div>
 
     <!-- Garlic Mayo Sauce -->
@@ -967,7 +963,7 @@
       <img src="assets/images/Garlic-Mayo-Sauce.png" alt="Garlic Mayo Sauce">
       <h3>Garlic Mayo Sauce</h3>
       <p class="price">Rs.50</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Garlic Mayo Sauce', 50)">Order Now</button>
     </div>
 
     <!-- Dip Mayo Sauce -->
@@ -975,7 +971,7 @@
       <img src="assets/images/Dip-Mayo-Sauce.png" alt="Dip Mayo Sauce">
       <h3>Dip Mayo Sauce</h3>
       <p class="price">Rs.50</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Dip Mayo Sauce', 50)">Order Now</button>
     </div>
 
     <!-- Ketchup Dip -->
@@ -983,7 +979,7 @@
       <img src="assets/images/Ketchup-Dip.png" alt="Ketchup Dip">
       <h3>Ketchup Dip</h3>
       <p class="price">Rs.50</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Ketchup Dip', 50)">Order Now</button>
     </div>
 
     <!-- Mayo Dip -->
@@ -991,15 +987,15 @@
       <img src="assets/images/Mayo-Dip.png" alt="Mayo Dip">
       <h3>Mayo Dip</h3>
       <p class="price">Rs.50</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Mayo Dip', 50)">Order Now</button>
     </div>
 
-    <!-- Mayo Dip -->
+    <!-- Green Chatni -->
     <div class="item-card">
-      <img src="assets/images/Chatni.png" alt="Chatni">
-      <h3>Mayo Dip</h3>
-      <p class="price">Rs.50</p>
-      <button class="btn order-btn">Order Now</button>
+      <img src="assets/images/Chatni.png" alt="Green Chatni">
+      <h3>Green Chatni</h3>
+      <p class="price">Rs.30</p>
+      <button class="btn order-btn" onclick="orderNow('Green Chatni', 30)">Order Now</button>
     </div>
 
     <!-- Raita -->
@@ -1007,7 +1003,7 @@
       <img src="assets/images/Raita.png" alt="Raita">
       <h3>Raita</h3>
       <p class="price">Rs.30</p>
-      <button class="btn order-btn">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Raita', 30)">Order Now</button>
     </div>
 
   </div>
@@ -1024,7 +1020,7 @@
       <img src="assets/images/Cheese-30g.jpeg" alt="Cheese 30 Grams">
       <h3>Cheese 30 Grams</h3>
       <p class="price">Rs.100</p>
-      <button class="btn order-btn" onclick="orderNow('Cheese 30 Grams')">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Cheese 30 Grams', 100)">Order Now</button>
     </div>
 
     <!-- Cheese Slice -->
@@ -1032,7 +1028,7 @@
       <img src="assets/images/Cheese-Slice.jpeg" alt="Cheese Slice">
       <h3>Cheese Slice</h3>
       <p class="price">Rs.50</p>
-      <button class="btn order-btn" onclick="orderNow('Cheese Slice')">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Cheese Slice', 50)">Order Now</button>
     </div>
 
     <!-- Meat 50 Grams -->
@@ -1040,7 +1036,7 @@
       <img src="assets/images/Meat-50g.png" alt="Meat 50 Grams">
       <h3>Meat 50 Grams</h3>
       <p class="price">Rs.100</p>
-      <button class="btn order-btn" onclick="orderNow('Meat 50 Grams')">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Meat 50 Grams', 100)">Order Now</button>
     </div>
 
     <!-- Plain Paratha -->
@@ -1048,7 +1044,7 @@
       <img src="assets/images/Plain-Paratha.jpeg" alt="Plain Paratha">
       <h3>Plain Paratha</h3>
       <p class="price">Rs.50</p>
-      <button class="btn order-btn" onclick="orderNow('Plain Paratha')">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Plain Paratha', 50)">Order Now</button>
     </div>
 
     <!-- Bun -->
@@ -1056,7 +1052,7 @@
       <img src="assets/images/Bun.jpeg" alt="Bun">
       <h3>Bun</h3>
       <p class="price">Rs.30</p>
-      <button class="btn order-btn" onclick="orderNow('Bun')">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Bun', 30)">Order Now</button>
     </div>
 
   </div>
@@ -1073,7 +1069,7 @@
       <img src="assets/images/Plain-Fries.png" alt="Plain Fries">
       <h3>Plain Fries</h3>
       <p class="price">Rs.150</p>
-      <button class="btn order-btn" onclick="orderNow('Plain Fries')">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Plain Fries', 150)">Order Now</button>
     </div>
 
     <!-- Masala Fries -->
@@ -1081,7 +1077,7 @@
       <img src="assets/images/Masala-Fries.png" alt="Masala Fries">
       <h3>Masala Fries</h3>
       <p class="price">Rs.170</p>
-      <button class="btn order-btn" onclick="orderNow('Masala Fries')">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Masala Fries', 170)">Order Now</button>
     </div>
 
     <!-- Garlic Mayo Fries -->
@@ -1089,7 +1085,7 @@
       <img src="assets/images/Garlic-Mayo-Fries.png" alt="Garlic Mayo Fries">
       <h3>Garlic Mayo Fries</h3>
       <p class="price">Rs.200</p>
-      <button class="btn order-btn" onclick="orderNow('Garlic Mayo Fries')">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Garlic Mayo Fries', 200)">Order Now</button>
     </div>
 
     <!-- Loaded Fries -->
@@ -1097,7 +1093,7 @@
       <img src="assets/images/Loaded-Fries.png" alt="Loaded Fries">
       <h3>Loaded Fries</h3>
       <p class="price">Rs.300</p>
-      <button class="btn order-btn" onclick="orderNow('Loaded Fries')">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Loaded Fries', 300)">Order Now</button>
     </div>
 
     <!-- Pizza Loaded Fries (Small) -->
@@ -1105,7 +1101,7 @@
       <img src="assets/images/Pizza-Loaded-Fries-Small.png" alt="Pizza Loaded Fries Small">
       <h3>Pizza Loaded Fries (Small)</h3>
       <p class="price">Rs.250</p>
-      <button class="btn order-btn" onclick="orderNow('Pizza Loaded Fries Small')">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Pizza Loaded Fries (Small)', 250)">Order Now</button>
     </div>
 
     <!-- Pizza Loaded Fries (Large) -->
@@ -1113,7 +1109,7 @@
       <img src="assets/images/Pizza-Loaded-Fries-Large.png" alt="Pizza Loaded Fries Large">
       <h3>Pizza Loaded Fries (Large)</h3>
       <p class="price">Rs.450</p>
-      <button class="btn order-btn" onclick="orderNow('Pizza Loaded Fries Large')">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Pizza Loaded Fries (Large)', 450)">Order Now</button>
     </div>
 
   </div>
@@ -1130,7 +1126,7 @@
       <img src="assets/images/FizzUp-345ml.jpg" alt="Fizz Up 345ml">
       <h3>Fizz Up / Next Cola 345ml</h3>
       <p class="price">Rs.80</p>
-      <button class="btn order-btn" onclick="orderNow('Fizz Up / Next Cola 345ml')">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Fizz Up / Next Cola 345ml', 80)">Order Now</button>
     </div>
 
     <!-- Fizz Up / Next Cola 500ml -->
@@ -1138,39 +1134,39 @@
       <img src="assets/images/FizzUp-500ml.jpeg" alt="Fizz Up 500ml">
       <h3>Fizz Up / Next Cola 500ml</h3>
       <p class="price">Rs.120</p>
-      <button class="btn order-btn" onclick="orderNow('Fizz Up / Next Cola 500ml')">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Fizz Up / Next Cola 500ml', 120)">Order Now</button>
     </div>
 
     <!-- Fizz Up / Next Cola 1L -->
     <div class="item-card">
       <img src="assets/images/FizzUp-1L.jpeg" alt="Fizz Up 1L">
-      <h3>Fizz Up / Next Cola 1 L</h3>
+      <h3>Fizz Up / Next Cola 1L</h3>
       <p class="price">Rs.150</p>
-      <button class="btn order-btn" onclick="orderNow('Fizz Up / Next Cola 1L')">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Fizz Up / Next Cola 1L', 150)">Order Now</button>
     </div>
 
     <!-- Fizz Up / Next Cola 1.5L -->
     <div class="item-card">
       <img src="assets/images/FizzUp-1_5L.jpeg" alt="Fizz Up 1.5L">
-      <h3>Fizz Up / Next Cola 1.5 L</h3>
+      <h3>Fizz Up / Next Cola 1.5L</h3>
       <p class="price">Rs.180</p>
-      <button class="btn order-btn" onclick="orderNow('Fizz Up / Next Cola 1.5L')">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Fizz Up / Next Cola 1.5L', 180)">Order Now</button>
     </div>
 
     <!-- Sting 345ml -->
     <div class="item-card">
       <img src="assets/images/Sting-345ml.jpeg" alt="Sting 345ml">
-      <h3>Sting 345 ml</h3>
+      <h3>Sting 345ml</h3>
       <p class="price">Rs.100</p>
-      <button class="btn order-btn" onclick="orderNow('Sting 345ml')">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Sting 345ml', 100)">Order Now</button>
     </div>
 
     <!-- Sting 500ml -->
     <div class="item-card">
       <img src="assets/images/Sting-500ml.jpeg" alt="Sting 500ml">
-      <h3>Sting 500 ml</h3>
+      <h3>Sting 500ml</h3>
       <p class="price">Rs.130</p>
-      <button class="btn order-btn" onclick="orderNow('Sting 500ml')">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Sting 500ml', 130)">Order Now</button>
     </div>
 
     <!-- Mineral Water Small -->
@@ -1178,7 +1174,7 @@
       <img src="assets/images/Mineral-Water-Small.jpeg" alt="Mineral Water Small">
       <h3>Mineral Water (Small)</h3>
       <p class="price">Rs.50</p>
-      <button class="btn order-btn" onclick="orderNow('Mineral Water Small')">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Mineral Water (Small)', 50)">Order Now</button>
     </div>
 
     <!-- Mineral Water Large -->
@@ -1186,7 +1182,7 @@
       <img src="assets/images/Mineral-Water-Large.jpeg" alt="Mineral Water Large">
       <h3>Mineral Water (Large)</h3>
       <p class="price">Rs.100</p>
-      <button class="btn order-btn" onclick="orderNow('Mineral Water Large')">Order Now</button>
+      <button class="btn order-btn" onclick="orderNow('Mineral Water (Large)', 100)">Order Now</button>
     </div>
 
   </div>
@@ -1196,32 +1192,256 @@
 
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Crust & Crums | Designed & Developed by <a href="https://smazweb.site" target="_blank">Smaz</a></p>
-  </footer>
+    <!-- Footer -->
+<footer>
+  <p>© 2025 Crust & Crums | Designed & Developed by
+    <a href="https://smazweb.site" target="_blank">Smaz</a>
+  </p>
+</footer>
 
-  <script>
-    // Hamburger toggle
-    function toggleMenu() {
-      const nav = document.getElementById('navLinks');
-      nav.classList.toggle('active');
-    }
+<style>
+  /* 🔹 Overlay Backdrop */
+  #order-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+  .hidden { display: none !important; }
 
-    // Category filtering
-    const buttons = document.querySelectorAll('.category-buttons button');
-    const categories = document.querySelectorAll('.category');
+  /* 🔹 Order Form Box */
+  #order-form {
+    background: rgba(30,30,30,0.95);
+    border: 1px solid rgba(255,193,7,0.4);
+    box-shadow: 0 0 25px rgba(255,193,7,0.3);
+    border-radius: 14px;
+    padding: 25px 28px;
+    width: 400px;
+    max-width: 90%;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    position: relative;
+    animation: popIn 0.3s ease;
+  }
 
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        buttons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+  @keyframes popIn {
+    0% { transform: scale(0.9); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
 
-        const cat = btn.getAttribute('data-category');
-        categories.forEach(c => c.id === cat ? c.classList.add('active') : c.classList.remove('active'));
+  #order-form h2 {
+    text-align: center;
+    color: #ffc107;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  #order-form p {
+    background: rgba(255,255,255,0.05);
+    border-left: 4px solid #ffc107;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #ddd;
+  }
+
+  #order-form label {
+    display: block;
+    margin-top: 10px;
+    color: #bbb;
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+
+  #order-form input,
+  #order-form textarea {
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+    font-size: 0.9rem;
+    outline: none;
+  }
+  #order-form input:focus,
+  #order-form textarea:focus {
+    border-color: #ffc107;
+    box-shadow: 0 0 6px rgba(255,193,7,0.5);
+  }
+
+  .order-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+  }
+  .order-buttons button {
+    flex: 1;
+    padding: 10px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  .btn-primary {
+    background: linear-gradient(90deg, #ffc107, #ff9800);
+    color: #1b1b1b;
+  }
+  .btn-primary:hover { background: linear-gradient(90deg, #ffb300, #ff6f00); }
+  .btn-secondary {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+  }
+  .btn-secondary:hover { background: rgba(255,255,255,0.2); }
+
+  /* 🔹 Floating Cart Button */
+  #view-cart-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(90deg,#ffc107,#ff9800);
+    color: #000;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(255,193,7,0.6);
+    cursor: pointer;
+    z-index: 10000;
+  }
+  #cart-badge {
+    background:red;
+    color:#fff;
+    border-radius:50%;
+    padding:2px 6px;
+    margin-left:6px;
+    font-size:0.8rem;
+    font-weight:700;
+  }
+</style>
+
+<!-- 🧾 Order Overlay -->
+<div id="order-overlay" class="hidden">
+  <div id="order-form">
+    <h2>🛍️ Place Your Order</h2>
+    <p id="selected-item">No items yet.</p>
+
+    <label for="name">👤 Name:</label>
+    <input id="name" type="text" placeholder="Enter your name">
+
+    <label for="address">🏠 Address:</label>
+    <textarea id="address" placeholder="Enter your address"></textarea>
+
+    <label for="whatsapp">📱 WhatsApp Number:</label>
+    <input id="whatsapp" type="text" placeholder="03xxxxxxxxx">
+
+    <div class="order-buttons">
+      <button onclick="clearCart()" class="btn-secondary">🧹 Clear Cart</button>
+      <button onclick="closeOrderForm()" class="btn-secondary">❌ Cancel</button>
+      <button onclick="sendToWhatsApp()" class="btn-primary">📩 Send to WhatsApp</button>
+    </div>
+  </div>
+</div>
+
+<!-- 🛒 Floating Cart Button -->
+<button id="view-cart-btn" onclick="showOrderForm()">
+  🛒 View Cart <span id="cart-badge"></span>
+</button>
+
+<script>
+  // 🔹 Multi-item Cart Logic
+  let cart = [];
+
+  function orderNow(itemName, price) {
+    const exists = cart.find(i => i.name === itemName);
+    if (!exists) cart.push({ name: itemName, price: price });
+    updateCartBadge();
+  }
+
+  function updateCartBadge() {
+    const badge = document.getElementById("cart-badge");
+    if (badge) badge.textContent = cart.length > 0 ? cart.length : "";
+  }
+
+  function showOrderForm() {
+    if (cart.length === 0) return alert("🛒 Please select at least one item!");
+    updateOrderForm();
+    document.getElementById("order-overlay").classList.remove("hidden");
+  }
+
+  function updateOrderForm() {
+    const list = document.getElementById("selected-item");
+    let total = 0;
+    list.innerHTML = "";
+    cart.forEach(item => {
+      total += item.price;
+      list.innerHTML += `🍴 ${item.name} — Rs.${item.price}<br>`;
+    });
+    list.innerHTML += `<br><b>💰 Total: Rs.${total}</b>`;
+  }
+
+  function sendToWhatsApp() {
+  const name = document.getElementById("name").value.trim();
+  const address = document.getElementById("address").value.trim();
+  let whatsapp = document.getElementById("whatsapp").value.trim();
+
+  if (cart.length === 0) return alert("🛒 Please select at least one item!");
+  if (!name || !address || !whatsapp) return alert("⚠️ Please fill all fields!");
+
+  whatsapp = whatsapp.replace(/[^\d]/g, "");
+  if (whatsapp.length < 9) return alert("❌ Invalid WhatsApp number (03XXXXXXXXX).");
+
+  const restaurantNumber = "923343610599"; // your restaurant number
+
+  // 🧾 Build order message
+  let message = `🧾 *New Order from Crust & Crums* \n\n`;
+  cart.forEach(i => { message += `🍴 ${i.name} — Rs.${i.price}\n`; });
+  const total = cart.reduce((s,i)=>s+i.price,0);
+  message += `\n💰 *Total:* Rs.${total}\n\n👤 *Name:* ${name}\n🏠 *Address:* ${address}\n📱 *Customer:* ${whatsapp}\n\n🕒 Please confirm my order & tell me complete price with dc.`;
+
+  // ✅ Encode and open WhatsApp
+  const encoded = encodeURIComponent(message);
+  const url = `https://wa.me/${restaurantNumber}?text=${encoded}`;
+  window.open(url, "_blank");
+}
+
+
+  function clearCart() {
+    cart = [];
+    updateCartBadge();
+    document.getElementById("selected-item").innerHTML = "🛒 Cart cleared.";
+  }
+
+  function closeOrderForm() {
+    document.getElementById("order-overlay").classList.add("hidden");
+  }
+
+  // 🔹 Category Switching Logic
+  document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll(".category-buttons button");
+    const categories = document.querySelectorAll(".category");
+
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        // remove active from all buttons
+        buttons.forEach(b => b.classList.remove("active"));
+        button.classList.add("active");
+
+        // show selected category
+        const cat = button.getAttribute("data-category");
+        categories.forEach(c => {
+          if (c.id === cat) c.classList.add("active");
+          else c.classList.remove("active");
+        });
       });
     });
-  </script>
-
-</body>
-</html>
+  });
+</script>
