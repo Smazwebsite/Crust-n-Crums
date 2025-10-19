@@ -1390,30 +1390,27 @@
   }
 
   function sendToWhatsApp() {
-  const name = document.getElementById("name").value.trim();
-  const address = document.getElementById("address").value.trim();
-  let whatsapp = document.getElementById("whatsapp").value.trim();
+    const name = document.getElementById("name").value.trim();
+    const address = document.getElementById("address").value.trim();
+    let whatsapp = document.getElementById("whatsapp").value.trim();
 
-  if (cart.length === 0) return alert("🛒 Please select at least one item!");
-  if (!name || !address || !whatsapp) return alert("⚠️ Please fill all fields!");
+    if (cart.length === 0) return alert("🛒 Please select at least one item!");
+    if (!name || !address || !whatsapp) return alert("⚠️ Please fill all fields!");
 
-  whatsapp = whatsapp.replace(/[^\d]/g, "");
-  if (whatsapp.length < 9) return alert("❌ Invalid WhatsApp number (03XXXXXXXXX).");
+    whatsapp = whatsapp.replace(/[^\d]/g, "");
+    if (whatsapp.length < 9) return alert("❌ Invalid WhatsApp number (03XXXXXXXXX).");
 
-  const restaurantNumber = "923343610599"; // your restaurant number
+    const restaurantNumber = "923343610599"; // your restaurant number
 
-  // 🧾 Build order message
-  let message = `🧾 *New Order from Crust & Crums* \n\n`;
-  cart.forEach(i => { message += `🍴 ${i.name} — Rs.${i.price}\n`; });
-  const total = cart.reduce((s,i)=>s+i.price,0);
-  message += `\n💰 *Total:* Rs.${total}\n\n👤 *Name:* ${name}\n🏠 *Address:* ${address}\n📱 *Customer:* ${whatsapp}\n\n🕒 Please confirm my order & tell me complete price with dc.`;
+    let message = `🧾 *New Order from Crust & Crums* \n\n`;
+    cart.forEach(i => { message += `🍴 ${i.name} — Rs.${i.price}\n`; });
+    const total = cart.reduce((s,i)=>s+i.price,0);
+    message += `\n💰 *Total:* Rs.${total}\n\n👤 *Name:* ${name}\n🏠 *Address:* ${address}\n📱 *Customer:* ${whatsapp}\n\n🕒 Please confirm my order & tell me complete price with dc.`;
 
-  // ✅ Encode and open WhatsApp
-  const encoded = encodeURIComponent(message);
-  const url = `https://wa.me/${restaurantNumber}?text=${encoded}`;
-  window.open(url, "_blank");
-}
-
+    const encoded = encodeURIComponent(message);
+    const url = `https://wa.me/${restaurantNumber}?text=${encoded}`;
+    window.open(url, "_blank");
+  }
 
   function clearCart() {
     cart = [];
@@ -1432,11 +1429,9 @@
 
     buttons.forEach(button => {
       button.addEventListener("click", () => {
-        // remove active from all buttons
         buttons.forEach(b => b.classList.remove("active"));
         button.classList.add("active");
 
-        // show selected category
         const cat = button.getAttribute("data-category");
         categories.forEach(c => {
           if (c.id === cat) c.classList.add("active");
@@ -1444,5 +1439,26 @@
         });
       });
     });
+
+    // 🔹 Hamburger Menu Logic (added)
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    function toggleMenu() {
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('open');
+    }
+
+    document.querySelectorAll('#navLinks a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        hamburger.classList.remove('open');
+      });
+    });
+
+    // Make toggleMenu global so onclick in HTML works
+    window.toggleMenu = toggleMenu;
   });
 </script>
+</body>
+</html>
