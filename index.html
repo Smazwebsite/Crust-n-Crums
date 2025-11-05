@@ -151,6 +151,53 @@
     .hamburger.open span:nth-child(2) { opacity:0; }
     .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
 
+    /* Daily Deal Popup */
+.deal-popup {
+  position: fixed;
+  top:0; left:0; width:100%; height:100%;
+  background: rgba(0,0,0,0.8);
+  display: none; justify-content:center; align-items:center;
+  z-index: 999;
+}
+
+.deal-content {
+  background:#111;
+  border:2px solid #f7a600;
+  border-radius:15px;
+  padding:20px;
+  text-align:center;
+  position: relative;
+  max-width: 350px;
+  width:90%;
+}
+
+.deal-content img {
+  width:100%;
+  border-radius:10px;
+  margin-bottom:15px;
+}
+
+.close-btn {
+  position:absolute;
+  top:10px; right:15px;
+  font-size:25px; color:#fff;
+  cursor:pointer; transition:0.3s;
+}
+.close-btn:hover { color:#f7a600; }
+
+.deal-order-btn {
+  background:#f7a600;
+  color:#000;
+  font-weight:600;
+  border:none;
+  border-radius:25px;
+  padding:10px 20px;
+  cursor:pointer;
+  transition:0.3s;
+}
+.deal-order-btn:hover { background:#fff; color:#111; }
+
+
   </style>
 </head>
 
@@ -225,26 +272,80 @@
     </div>
   </section>
 
+  <!-- Daily Deal Popup -->
+<div id="deal-popup" class="deal-popup">
+  <div class="deal-content">
+    <span class="close-btn" id="closeDeal">&times;</span>
+    <img id="dealImage" src="" alt="Today’s Deal">
+    <button class="deal-order-btn" id="orderDealBtn">Order on WhatsApp</button>
+  </div>
+</div>
+
+<script>
+  // Daily Deals (Image path + day name)
+  const deals = [
+    { img: "assets/deals/deal1.jpg", day: "Monday" },
+    { img: "assets/deals/deal2.jpg", day: "Tuesday" },
+    { img: "assets/deals/deal3.jpg", day: "Wednesday" },
+    { img: "assets/deals/deal4.jpg", day: "Thursday" },
+    { img: "assets/deals/deal5.jpg", day: "Friday" },
+    { img: "assets/deals/deal6.jpg", day: "Saturday" },
+    { img: "assets/deals/deal7.jpg", day: "Sunday" },
+  ];
+
+  // Get current day (0 = Sunday, 1 = Monday, ...)
+  const today = new Date().getDay();
+  const deal = deals[today === 0 ? 6 : today - 1]; // Monday=Deal1, Sunday=Deal7
+
+  // Update popup image
+  document.getElementById("dealImage").src = deal.img;
+
+  // WhatsApp order button
+  const orderBtn = document.getElementById("orderDealBtn");
+  orderBtn.addEventListener("click", () => {
+    const number = "923343610599";
+    const message = `Hello! I’m placing this order from your website. I’d like to get the ${deal.day} Deal.`;
+    window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`, "_blank");
+  });
+
+  // Close button functionality
+  const popup = document.getElementById("deal-popup");
+  const closeBtn = document.getElementById("closeDeal");
+  closeBtn.addEventListener("click", () => (popup.style.display = "none"));
+
+  // Show popup after 1 second
+  window.addEventListener("load", () => {
+    setTimeout(() => (popup.style.display = "flex"), 1000);
+  });
+</script>
+
   <!-- Footer -->
   <footer>
     <p>© 2024-2025 <strong>Crust & Crums</strong> | Designed & Developed by <a href="https://smazweb.site" target="_blank">Smaz</a></p>
   </footer>
 
-  <!-- JS -->
-  <script>
-    function orderNow(item) {
-      const number = "923343610599";
-      const message = `Hi! I want to order: ${item}`;
-      window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`, "_blank");
-    }
+<!-- JS Scripts -->
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.getElementById('nav-links');
 
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      hamburger.classList.toggle('open'); 
+  function toggleMenu() {
+    navLinks.classList.toggle('active');
+    hamburger.classList.toggle('open');
+  }
+
+  // Mobile: close menu on link click
+  document.querySelectorAll('#nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      hamburger.classList.remove('open');
     });
-  </script>
+  });
+
+  // Add click listener to hamburger
+  hamburger.addEventListener('click', toggleMenu);
+</script>
+
 
 </body>
 </html>
