@@ -9,7 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/icons/icon.png">
+  <link rel="icon" type="image/png" href="./assets/icons/icon.png">
+
 
   <!-- Meta tags -->
   <meta property="og:title" content="Crust & Crums | Fast Food, Pizzas & BBQ Point" />
@@ -232,15 +233,16 @@
     }
 
     // Daily Deals
-    const deals=[
-      {img:"assets/deals/deal1.png",day:"Monday"},
-      {img:"assets/deals/deal2.png",day:"Tuesday"},
-      {img:"assets/deals/deal3.png",day:"Wednesday"},
-      {img:"assets/deals/deal4.png",day:"Thursday"},
-      {img:"assets/deals/deal5.png",day:"Friday"},
-      {img:"assets/deals/deal6.png",day:"Saturday"},
-      {img:"assets/deals/deal7.png",day:"Sunday"},
-    ];
+    const deals=[ 
+  {img:"./assets/deals/deal1.png",day:"Monday"},
+  {img:"./assets/deals/deal2.png",day:"Tuesday"},
+  {img:"./assets/deals/deal3.png",day:"Wednesday"},
+  {img:"./assets/deals/deal4.png",day:"Thursday"},
+  {img:"./assets/deals/deal5.png",day:"Friday"},
+  {img:"./assets/deals/deal6.png",day:"Saturday"},
+  {img:"./assets/deals/deal7.png",day:"Sunday"},
+];
+
     const today=new Date().getDay();
     const deal=deals[today===0?6:today-1];
     document.getElementById("dealImage").src=deal.img;
