@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <!-- ★★★★★ Website Developed By SMAZ — smazweb.site ★★★★★ -->
+  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Crust & Crums | Fast Food, Pizzas & BBQ Point</title>
@@ -11,16 +14,93 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/icons/icon.png">
 
-  <!-- Meta tags -->
-  <meta property="og:title" content="Crust & Crums | Fast Food, Pizzas & BBQ Point" />
-  <meta property="og:description" content="Premium taste, sizzling freshness & irresistible aroma – straight from Crust & Crums kitchen to your door." />
-  <meta property="og:image" content="assets/icons/icon.png" />
-  <meta property="og:url" content="https://yourwebsite.com" />
+  <!-- ======================== -->
+<!-- 🔥 Professional Meta Tags -->
+<!-- ======================== -->
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Crust & Crums | Fast Food, Pizzas & BBQ Point">
-  <meta name="twitter:description" content="Premium taste, sizzling freshness & irresistible aroma – straight from Crust & Crums kitchen to your door.">
-  <meta name="twitter:image" content="assets/icons/icon.png">
+<meta name="description" content="Crust & Crums – Premium fast food, pizzas & BBQ. Fresh, sizzling & delicious meals delivered to your doorstep. Website, apps, posters, and graphics designed by Smaz.">
+
+<meta property="og:title" content="Crust & Crums | Fast Food, Pizzas & BBQ Point">
+<meta property="og:description" content="Premium taste, sizzling freshness & irresistible aroma – straight from Crust & Crums kitchen to your door.">
+<meta property="og:image" content="https://www.crustandcrums.com/assets/icons/icon.png">
+<meta property="og:url" content="https://www.crustandcrums.com">
+<meta property="og:type" content="website">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Crust & Crums | Fast Food, Pizzas & BBQ Point">
+<meta name="twitter:description" content="Premium taste, sizzling freshness & irresistible aroma – straight from Crust & Crums kitchen to your door.">
+<meta name="twitter:image" content="https://www.crustandcrums.com/assets/icons/icon.png">
+
+<meta name="author" content="Website, apps, posters & graphics developed by Smaz (smazweb.site)">
+
+<!-- ============================= -->
+<!-- ⭐ Developer Schema (Detailed) -->
+<!-- ============================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Crust & Crums - Official Website",
+  "url": "https://www.crustandcrums.com",
+  "description": "Official website of Crust & Crums fast food, pizza, and BBQ restaurant located in Nawabshah. Designed, developed, and maintained by Smaz, specializing in websites, mobile apps, posters, and graphic designs.",
+
+  "creator": {
+    "@type": "Person",
+    "name": "Smaz",
+    "url": "https://smazweb.site",
+    "jobTitle": "Full Stack Web & App Developer, Graphic Designer",
+    "description": "Smaz is a professional web & app developer, graphic designer, and digital creator. He develops websites, mobile applications, posters, and all types of digital graphics. Official developer of Crust & Crums website."
+  },
+
+  "publisher": {
+    "@type": "Organization",
+    "name": "Crust & Crums",
+    "url": "https://www.crustandcrums.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.crustandcrums.com/assets/icons/icon.png"
+    }
+  }
+}
+</script>
+
+<!-- ===================================== -->
+<!-- ⭐ Main Restaurant / Organization Schema -->
+<!-- ===================================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Crust & Crums",
+  "url": "https://www.crustandcrums.com",
+  "image": "https://www.crustandcrums.com/assets/icons/icon.png",
+
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Nawabshah City Center",
+    "addressLocality": "Nawabshah",
+    "addressRegion": "Sindh",
+    "postalCode": "67450",
+    "addressCountry": "PK"
+  },
+
+  "servesCuisine": ["Fast Food", "Pizza", "BBQ"],
+  "priceRange": "PKR 300 - 2000",
+
+  "founder": {
+    "@type": "Person",
+    "name": "Syed Muhammad Atif and Sons"
+  },
+
+  "creator": {
+    "@type": "Person",
+    "name": "Smaz",
+    "url": "https://smazweb.site",
+    "jobTitle": "Full Stack Web & App Developer, Graphic Designer",
+    "description": "Smaz is a professional web & app developer, graphic designer, and digital creator. He develops websites, mobile apps, posters, and all types of digital graphics. Official developer of Crust & Crums."
+  }
+}
+</script>
 
   <style>
     * { box-sizing: border-box; margin:0; padding:0; }
@@ -227,7 +307,7 @@
     // Order Now
     function orderNow(item){
       const number="923343610599";
-      const message=`Assalam u Alaikum! This Oredr is from Website, and I’d like to order: ${item}`;
+      const message=`Assalam u Alaikum! This Order is from Website, and I’d like to order: ${item}`;
       window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`,"_blank");
     }
 
