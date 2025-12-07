@@ -265,7 +265,7 @@
   <section class="feedback-section">
     <h2>⭐ Customer Feedback</h2>
     <form id="feedbackForm">
-      <input type="text" name="name" placeholder="Enter your name (e.g., Abuzar Zaidi)" required>
+      <input type="text" name="name" placeholder="Your Name" required>
       <select name="rating" required>
         <option value="">Rate Us</option>
         <option value="5">⭐⭐⭐⭐⭐</option>
@@ -282,7 +282,7 @@
 
   <!-- Footer -->
   <footer>
-    <p>© 2026 <strong>Crust & Crums</strong> | Designed & Developed by <a href="https://smazweb.site" target="_blank">Smaz</a></p>
+    <p>© 2024-2025 <strong>Crust & Crums</strong> | Designed & Developed by <a href="https://smazweb.site" target="_blank">Smaz</a></p>
   </footer>
 
   <!-- Daily Deal Popup -->
@@ -307,7 +307,7 @@
     // Order Now
     function orderNow(item){
       const number="923343610599";
-      const message=`Assalam u Alaikum! This Order is from Website, and I’d like to order: ${item}`;
+      const message=`Assalam u Alaikum! This Oredr is from Website, and I’d like to order: ${item}`;
       window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`,"_blank");
     }
 
@@ -334,7 +334,9 @@
 <!-- ✅ Firebase Feedback System -->
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
-  import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
+  
+  import { serverTimestamp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
+  import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, updateDoc } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
 
   // 🔥 Firebase Config
   const firebaseConfig = {
@@ -357,6 +359,7 @@
 
   let allFeedbacks = [];
   let showingAll = false;
+  let currentUserName = ""; // 🔹 Track current user for edit permission
 
   // ✅ Add Feedback
   feedbackForm.addEventListener("submit", async (e) => {
@@ -366,6 +369,7 @@
     const message = e.target.message.value.trim();
 
     if (!name || !rating || !message) return alert("⚠️ Please fill all fields!");
+    currentUserName = name; // 🔹 Set current user
 
     try {
       await addDoc(collection(db, "feedbacks"), {
@@ -400,7 +404,7 @@
 
     // Sort by newest
     allFeedbacks.sort(
-      (a, b) => (b.createdAt?.seconds || 0) - (a.createdAt?.seconds || 0)
+      (a, b) => (b.createdAt?.toDate?.() || 0) - (a.createdAt?.toDate?.() || 0)
     );
 
     // ✅ Calculate Average
@@ -451,15 +455,81 @@
         color:#000;
         box-shadow:0 2px 5px rgba(0,0,0,0.1);
       `;
+
+      // Format Date & Time
+      let feedbackDate = "";
+      if (data.createdAt && data.createdAt.toDate) {
+        const dt = data.createdAt.toDate();
+        const options = { 
+          year: "numeric", month: "short", day: "numeric", 
+          hour: "2-digit", minute: "2-digit", second: "2-digit" 
+        };
+        feedbackDate = dt.toLocaleString("en-US", options);
+      }
+
+      // Add innerHTML with Edit & Delete buttons
       div.innerHTML = `
         <h4>${data.name} ⭐ ${data.rating}/5</h4>
         <p>${data.message}</p>
-        <button class="deleteBtn" data-id="${data.id}" style="background:red;color:white;border:none;padding:5px 10px;border-radius:5px;cursor:pointer;">Delete</button>
+        <small style="color:#555;">🕒 ${feedbackDate}</small>
       `;
+
+      // 🔹 Only show edit button if this is current user's feedback
+      if (data.name === currentUserName) {
+        const editBtn = document.createElement("button");
+        editBtn.textContent = "Edit";
+        editBtn.style = "background:#f7a600;color:#000;border:none;padding:5px 10px;border-radius:5px;cursor:pointer;margin-right:5px;";
+        editBtn.addEventListener("click", async () => {
+          const newName = prompt("Update your name:", data.name);
+          const newRating = prompt("Update rating (1-5):", data.rating);
+          const newMessage = prompt("Update your message:", data.message);
+
+          if (newName && newRating && newMessage) {
+            try {
+              const feedbackRef = doc(db, "feedbacks", data.id);
+              await updateDoc(feedbackRef, {
+                name: newName,
+                rating: newRating,
+                message: newMessage,
+                updatedAt: new Date()
+              });
+              alert("✅ Feedback updated successfully!");
+              currentUserName = newName; // 🔹 update current user name
+              loadFeedbacks();
+            } catch (err) {
+              console.error("Update error:", err);
+              alert("⚠️ Error updating feedback!");
+            }
+          }
+        });
+        div.appendChild(editBtn);
+      }
+
+      // Delete Button (only admin)
+      const deleteBtn = document.createElement("button");
+      deleteBtn.textContent = "Delete";
+      deleteBtn.style = "background:red;color:white;border:none;padding:5px 10px;border-radius:5px;cursor:pointer;";
+      deleteBtn.addEventListener("click", async () => {
+        const pass = prompt("Enter admin password:");
+        if (pass === ADMIN_PASS) {
+          try {
+            await deleteDoc(doc(db, "feedbacks", data.id));
+            alert("✅ Feedback deleted successfully!");
+            loadFeedbacks();
+          } catch (error) {
+            console.error("Delete error:", error);
+            alert("⚠️ Failed to delete feedback. Check Firestore rules or console.");
+          }
+        } else if (pass !== null) {
+          alert("❌ Wrong password!");
+        }
+      });
+      div.appendChild(deleteBtn);
+
       feedbackList.appendChild(div);
     });
 
-    // ✅ “See More / See Less” Button
+    // See More / See Less Button
     if (allFeedbacks.length > 3) {
       const btn = document.createElement("button");
       btn.textContent = showingAll ? "See Less" : "See More";
@@ -480,29 +550,11 @@
       });
       feedbackList.appendChild(btn);
     }
-
-    // ✅ Delete Button
-    document.querySelectorAll(".deleteBtn").forEach((btn) => {
-      btn.addEventListener("click", async () => {
-        const pass = prompt("Enter admin password:");
-        if (pass === ADMIN_PASS) {
-          try {
-            await deleteDoc(doc(db, "feedbacks", btn.dataset.id));
-            alert("✅ Feedback deleted successfully!");
-            loadFeedbacks();
-          } catch (error) {
-            console.error("Delete error:", error);
-            alert("⚠️ Failed to delete feedback. Check Firestore rules or console.");
-          }
-        } else if (pass !== null) {
-          alert("❌ Wrong password!");
-        }
-      });
-    });
   }
 
   // ✅ Initial Load
   loadFeedbacks();
 </script>
+
 </body>
 </html>

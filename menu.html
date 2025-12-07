@@ -1460,5 +1460,121 @@
     window.toggleMenu = toggleMenu;
   });
 </script>
+<!-- Firebase & Order Script -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
+
+// 🔥 Firebase Config
+const firebaseConfig = {
+  apiKey: "AIzaSyA4Uw7kAotIRr511E_avy-2OoiIU63FetM",
+  authDomain: "crust-and-crums.firebaseapp.com",
+  projectId: "crust-and-crums",
+  storageBucket: "crust-and-crums.appspot.com",
+  messagingSenderId: "711167857993",
+  appId: "1:711167857993:web:10b81eb606f049f382f698",
+  measurementId: "G-MHCZ0G32ML"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const ordersCollection = collection(db, "orders"); // Firestore collection
+
+// Multi-item cart
+
+// Add item to cart
+function orderNow(itemName, price) {
+  const exists = cart.find(i => i.name === itemName);
+  if (!exists) cart.push({ name: itemName, price });
+  updateCartBadge();
+}
+
+// Update cart badge
+function updateCartBadge() {
+  const badge = document.getElementById("cart-badge");
+  badge.textContent = cart.length > 0 ? cart.length : "";
+}
+
+// Show order form
+function showOrderForm() {
+  if (cart.length === 0) return alert("🛒 Please select at least one item!");
+  updateOrderForm();
+  document.getElementById("order-overlay").classList.remove("hidden");
+}
+
+// Update order form display
+function updateOrderForm() {
+  const list = document.getElementById("selected-item");
+  let total = 0;
+  list.innerHTML = "";
+  cart.forEach(item => {
+    total += item.price;
+    list.innerHTML += `🍴 ${item.name} — Rs.${item.price}<br>`;
+  });
+  list.innerHTML += `<br><b>💰 Total: Rs.${total}</b>`;
+}
+
+// ✅ Send WhatsApp + Save silently to Firebase
+async function sendToWhatsApp() {
+  const name = document.getElementById("name").value.trim();
+  const address = document.getElementById("address").value.trim();
+  let whatsapp = document.getElementById("whatsapp").value.trim();
+
+  if (cart.length === 0) return alert("🛒 Please select at least one item!");
+  if (!name || !address || !whatsapp) return alert("⚠️ Please fill all fields!");
+
+  whatsapp = whatsapp.replace(/[^\d]/g, "");
+  if (whatsapp.length < 9) return alert("❌ Invalid WhatsApp number (03XXXXXXXXX).");
+
+  const restaurantNumber = "923343610599"; // your WhatsApp number
+  const total = cart.reduce((s,i)=>s+i.price,0);
+
+  // 🔹 Save all order data silently
+  try {
+    await addDoc(ordersCollection, {
+      items: cart,
+      total,
+      customer: { name, address, whatsapp },
+      status: "pending",
+      createdAt: serverTimestamp()
+    });
+  } catch (err) {
+    console.error("Error saving order:", err);
+  }
+
+  // 🔹 Prepare WhatsApp message
+  let message = `🧾 *New Order from Crust & Crums*\n\n`;
+  cart.forEach(i => { message += `🍴 ${i.name} — Rs.${i.price}\n`; });
+  message += `\n💰 *Total:* Rs.${total}\n\n👤 *Name:* ${name}\n🏠 *Address:* ${address}\n📱 *Customer:* ${whatsapp}\n\n🕒 Please confirm my order & tell me complete price with dc.`;
+
+  // 🔹 Open WhatsApp
+  window.open(`https://wa.me/${restaurantNumber}?text=${encodeURIComponent(message)}`, "_blank");
+
+  // Clear cart after sending
+  clearCart();
+  closeOrderForm();
+}
+
+// Clear cart
+function clearCart() {
+  cart = [];
+  updateCartBadge();
+  document.getElementById("selected-item").innerHTML = "🛒 Cart cleared.";
+}
+
+// Close order form
+function closeOrderForm() {
+  document.getElementById("order-overlay").classList.add("hidden");
+}
+
+// Make functions global for HTML onclick
+window.orderNow = orderNow;
+window.showOrderForm = showOrderForm;
+window.sendToWhatsApp = sendToWhatsApp;
+window.clearCart = clearCart;
+window.closeOrderForm = closeOrderForm;
+</script>
+
 </body>
 </html>
