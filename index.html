@@ -433,13 +433,13 @@ const dealPopup = document.getElementById("deal-popup");
 
 // Daily Deals
 const deals = [
-  { img: "assets/deal/deal1.png", day: "Monday" },
-  { img: "assets/deal/deal2.png", day: "Tuesday" },
-  { img: "assets/deal/deal3.png", day: "Wednesday" },
-  { img: "assets/deal/deal4.png", day: "Thursday" },
-  { img: "assets/deal/deal5.png", day: "Friday" },
-  { img: "assets/deal/deal6.png", day: "Saturday" },
-  { img: "assets/deal/deal7.png", day: "Sunday" },
+  { img: "deal1.png", day: "Monday" },
+  { img: "deal2.png", day: "Tuesday" },
+  { img: "deal3.png", day: "Wednesday" },
+  { img: "deal4.png", day: "Thursday" },
+  { img: "deal5.png", day: "Friday" },
+  { img: "deal6.png", day: "Saturday" },
+  { img: "deal7.png", day: "Sunday" },
 ];
 const today = new Date().getDay();
 const deal = deals[today === 0 ? 6 : today - 1];
@@ -711,4 +711,5 @@ function orderNow(item) {
 </script>
 
 </body>
+
 </html>
