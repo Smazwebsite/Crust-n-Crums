@@ -192,6 +192,116 @@
     .feedback-item{background:#1a1a1a;border-left:5px solid #f7a600;padding:15px;border-radius:8px;margin-bottom:15px;}
     .deleteBtn{background:#ff4d4d;color:#fff;border:none;border-radius:8px;padding:5px 10px;cursor:pointer;}
     .deleteBtn:hover{background:#ff1a1a;}
+
+    /* Full Screen Ad - Perfectly Adjusted */
+#ad-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;  
+  height: 100vh; 
+  background: rgba(0, 0, 0, 0.85); 
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 0;
+}
+
+#ad-popup .deal-content {
+  width: 85%;
+  max-width: 900px;
+  max-height: 85vh;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  background: #111;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* image top, button bottom */
+  align-items: center;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+#ad-popup .deal-content img {
+  width: 100%;
+  height: auto;
+  max-height: 70vh; /* image adjusts to screen height */
+  object-fit: contain; 
+  display: block;
+  margin-bottom: 15px; /* gap between image and button */
+}
+
+#ad-popup .close-btn {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.3s;
+}
+
+#ad-popup .close-btn:hover {
+  color: #f7a600;
+}
+
+#ad-popup .deal-order-btn {
+  width: auto;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  background: #f7a600;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  align-self: center; /* ensure button is centered */
+  margin-bottom: 10px; /* gap from bottom of box */
+}
+
+#ad-popup .deal-order-btn:hover {
+  background: #fff;
+  color: #111;
+}
+
+/* Responsive Adjustments */
+@media(max-width: 1024px) {
+  #ad-popup .deal-content {
+    width: 90%;
+    max-height: 80vh;
+  }
+
+  #ad-popup .close-btn {
+    font-size: 26px;
+  }
+
+  #ad-popup .deal-order-btn {
+    font-size: 0.95rem;
+    padding: 10px 22px;
+  }
+}
+
+@media(max-width: 768px) {
+  #ad-popup .deal-content {
+    width: 95%;
+    max-height: 70vh;
+    padding: 10px;
+  }
+
+  #ad-popup .close-btn {
+    font-size: 24px;
+  }
+
+  #ad-popup .deal-order-btn {
+    font-size: 0.9rem;
+    padding: 8px 18px;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -265,7 +375,7 @@
   <section class="feedback-section">
     <h2>⭐ Customer Feedback</h2>
     <form id="feedbackForm">
-      <input type="text" name="name" placeholder="Your Name eg:(Mr. Abuzar)" required>
+      <input type="text" name="name" placeholder="Your Name... eg: (Mr.Abuzar)" required>
       <select name="rating" required>
         <option value="">Rate Us</option>
         <option value="5">⭐⭐⭐⭐⭐</option>
@@ -285,6 +395,17 @@
     <p>© 2026 <strong>Crust & Crums</strong> | Designed & Developed by <a href="https://smazweb.site" target="_blank">Smaz</a></p>
   </footer>
 
+  <!-- Advertisement Popup -->
+  <div id="ad-popup" class="deal-popup">
+   <div class="deal-content">
+     <span class="close-btn" id="closeAd">&times;</span>
+     <img src="assets/ads/ad1.png" alt="Advertisement">
+     <p style="color:#fff; margin-top:10px;">Check out our special offers!</p>
+     <button class="deal-order-btn" id="adActionBtn">Learn More</button>
+   </div>
+  </div>
+
+  
   <!-- Daily Deal Popup -->
   <div id="deal-popup" class="deal-popup">
     <div class="deal-content">
@@ -304,33 +425,66 @@
       navLinks.classList.toggle("active");
     });
 
-    // Order Now
-    function orderNow(item){
-      const number="923343610599";
-      const message=`Assalam u Alaikum! This Oredr is from Website, and I’d like to order: ${item}`;
-      window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`,"_blank");
-    }
+    // Advertisement Logic
+const adPopup = document.getElementById("ad-popup");
+const closeAd = document.getElementById("closeAd");
+const adActionBtn = document.getElementById("adActionBtn");
+const dealPopup = document.getElementById("deal-popup");
 
-    // Daily Deals
-    const deals=[
-      {img:"assets/deals/deal1.png",day:"Monday"},
-      {img:"assets/deals/deal2.png",day:"Tuesday"},
-      {img:"assets/deals/deal3.png",day:"Wednesday"},
-      {img:"assets/deals/deal4.png",day:"Thursday"},
-      {img:"assets/deals/deal5.png",day:"Friday"},
-      {img:"assets/deals/deal6.png",day:"Saturday"},
-      {img:"assets/deals/deal7.png",day:"Sunday"},
-    ];
-    const today=new Date().getDay();
-    const deal=deals[today===0?6:today-1];
-    document.getElementById("dealImage").src=deal.img;
-    document.getElementById("orderDealBtn").onclick=()=>{
-      window.open(`https://wa.me/923343610599?text=${encodeURIComponent("Assalam u Alaikum! This Order is from Website, and I’d like to oredr the "+deal.day+" Deal.")}`,"_blank");
-    };
-    document.getElementById("closeDeal").onclick=()=>document.getElementById("deal-popup").style.display="none";
-    window.addEventListener("load",()=>setTimeout(()=>document.getElementById("deal-popup").style.display="flex",1000));
+// Daily Deals
+const deals = [
+  { img: "assets/deal/deal1.png", day: "Monday" },
+  { img: "assets/deal/deal2.png", day: "Tuesday" },
+  { img: "assets/deal/deal3.png", day: "Wednesday" },
+  { img: "assets/deal/deal4.png", day: "Thursday" },
+  { img: "assets/deal/deal5.png", day: "Friday" },
+  { img: "assets/deal/deal6.png", day: "Saturday" },
+  { img: "assets/deal/deal7.png", day: "Sunday" },
+];
+const today = new Date().getDay();
+const deal = deals[today === 0 ? 6 : today - 1];
+document.getElementById("dealImage").src = deal.img;
+document.getElementById("orderDealBtn").onclick = () => {
+  window.open(`https://wa.me/923343610599?text=${encodeURIComponent("Assalam u Alaikum! This Order is from Website, and I’d like to order the " + deal.day + " Deal.")}`, "_blank");
+};
+
+// Show Ad on page load
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    adPopup.style.display = "flex";
+  }, 500); // 0.5 sec delay
+});
+
+// Close Ad and show Daily Deal
+closeAd.onclick = () => {
+  adPopup.style.display = "none";
+  setTimeout(() => {
+    dealPopup.style.display = "flex";
+  }, 500); // 0.5 sec delay
+};
+
+// Ad Action Button
+adActionBtn.onclick = () => {
+  window.location.href = "menu.html";
+  adPopup.style.display = "none";
+  setTimeout(() => {
+    dealPopup.style.display = "flex";
+  }, 500);
+};
+
+// Close Deal
+document.getElementById("closeDeal").onclick = () => {
+  dealPopup.style.display = "none";
+};
+
+// Order Now Function
+function orderNow(item) {
+  const number = "923343610599";
+  const message = `Assalam u Alaikum! This Order is from Website, and I’d like to order: ${item}`;
+  window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`, "_blank");
+};
   </script>
-
+  
 <!-- ✅ Firebase Feedback System -->
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
@@ -557,5 +711,4 @@
 </script>
 
 </body>
-
 </html>
