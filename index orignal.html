@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- ★★★★★ Website Developed By SMAZ — smazweb.site ★★★★★ -->
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crust & Crums | Fast Food, Pizzas & BBQ Point</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/icons/icon.png">
+
+  <!-- ======================== -->
+<!-- 🔥 Professional Meta Tags -->
+<!-- ======================== -->
+
+<meta name="description" content="Crust & Crums – Premium fast food, pizzas & BBQ. Fresh, sizzling & delicious meals delivered to your doorstep. Website, apps, posters, and graphics designed by Smaz.">
+
+<meta property="og:title" content="Crust & Crums | Fast Food, Pizzas & BBQ Point">
+<meta property="og:description" content="Premium taste, sizzling freshness & irresistible aroma – straight from Crust & Crums kitchen to your door.">
+<meta property="og:image" content="https://www.crustandcrums.com/assets/icons/icon.png">
+<meta property="og:url" content="https://www.crustandcrums.com">
+<meta property="og:type" content="website">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Crust & Crums | Fast Food, Pizzas & BBQ Point">
+<meta name="twitter:description" content="Premium taste, sizzling freshness & irresistible aroma – straight from Crust & Crums kitchen to your door.">
+<meta name="twitter:image" content="https://www.crustandcrums.com/assets/icons/icon.png">
+
+<meta name="author" content="Website, apps, posters & graphics developed by Smaz (smazweb.site)">
+
+<!-- ============================= -->
+<!-- ⭐ Developer Schema (Detailed) -->
+<!-- ============================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Crust & Crums - Official Website",
+  "url": "https://www.crustandcrums.com",
+  "description": "Official website of Crust & Crums fast food, pizza, and BBQ restaurant located in Nawabshah. Designed, developed, and maintained by Smaz, specializing in websites, mobile apps, posters, and graphic designs.",
+
+  "creator": {
+    "@type": "Person",
+    "name": "Smaz",
+    "url": "https://smazweb.site",
+    "jobTitle": "Full Stack Web & App Developer, Graphic Designer",
+    "description": "Smaz is a professional web & app developer, graphic designer, and digital creator. He develops websites, mobile applications, posters, and all types of digital graphics. Official developer of Crust & Crums website."
+  },
+
+  "publisher": {
+    "@type": "Organization",
+    "name": "Crust & Crums",
+    "url": "https://www.crustandcrums.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.crustandcrums.com/assets/icons/icon.png"
+    }
+  }
+}
+</script>
+
+<!-- ===================================== -->
+<!-- ⭐ Main Restaurant / Organization Schema -->
+<!-- ===================================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Crust & Crums",
+  "url": "https://www.crustandcrums.com",
+  "image": "https://www.crustandcrums.com/assets/icons/icon.png",
+
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Nawabshah City Center",
+    "addressLocality": "Nawabshah",
+    "addressRegion": "Sindh",
+    "postalCode": "67450",
+    "addressCountry": "PK"
+  },
+
+  "servesCuisine": ["Fast Food", "Pizza", "BBQ"],
+  "priceRange": "PKR 300 - 2000",
+
+  "founder": {
+    "@type": "Person",
+    "name": "Syed Muhammad Atif and Sons"
+  },
+
+  "creator": {
+    "@type": "Person",
+    "name": "Smaz",
+    "url": "https://smazweb.site",
+    "jobTitle": "Full Stack Web & App Developer, Graphic Designer",
+    "description": "Smaz is a professional web & app developer, graphic designer, and digital creator. He develops websites, mobile apps, posters, and all types of digital graphics. Official developer of Crust & Crums."
+  }
+}
+</script>
+
+  <style>
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body { font-family:'Poppins',sans-serif; background:#111; color:#fff; line-height:1.8; scroll-behavior:smooth; }
+    a { text-decoration:none; }
+
+    /* Navbar */
+    .navbar {
+      position:fixed; top:0; left:0; width:100%;
+      background:#000; display:flex; justify-content:space-between; align-items:center;
+      padding:15px 8%; z-index:100;
+    }
+    .logo { font-size:1.6rem; font-weight:700; color:#f7a600; }
+    nav ul { display:flex; gap:25px; list-style:none; }
+    nav ul a { color:#fff; font-weight:500; transition:0.3s; }
+    nav ul a:hover, nav ul a.active { color:#f7a600; }
+
+    /* Hamburger */
+    .hamburger { display:none; flex-direction:column; cursor:pointer; gap:5px; }
+    .hamburger span { width:25px; height:3px; background:#fff; transition:0.3s; }
+    .hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+    .hamburger.open span:nth-child(2){opacity:0;}
+    .hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+
+    /* Hero */
+    .hero {
+      position:relative; text-align:center; display:flex; flex-direction:column;
+      justify-content:center; align-items:center; min-height:450px;
+      padding:60px 20px; background:url('assets/images/hero-bg.png') center/cover no-repeat;
+      margin-top:70px;
+    }
+    .hero .overlay {position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);}
+    .hero-content {position:relative;z-index:2;max-width:700px;}
+    .hero-content h1 {font-size:2.8rem;margin-bottom:20px;color:#f7a600;}
+    .hero-content p {font-size:1.2rem;color:#ddd;margin-bottom:25px;}
+    .btn {padding:12px 25px;border-radius:25px;font-weight:600;color:#000;background:#f7a600;display:inline-block;margin:5px;transition:0.3s;}
+    .btn:hover {background:#fff;color:#111;}
+    .btn.secondary {background:#111;border:2px solid #f7a600;color:#f7a600;}
+    .btn.secondary:hover {background:#f7a600;color:#000;}
+
+    /* Featured Menu */
+    .featured {padding:60px 10%;}
+    .featured h2 {font-size:2rem;margin-bottom:30px;color:#f7a600;}
+    .menu-grid {display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+    .menu-item {background:#1a1a1a;border-radius:12px;overflow:hidden;transition:0.3s;}
+    .menu-item img {width:100%;display:block;}
+    .menu-info {padding:15px;}
+    .menu-info h3 {font-size:1.2rem;margin-bottom:8px;}
+    .menu-info p {font-size:0.95rem;color:#ccc;margin-bottom:12px;}
+    .order-btn {width:100%;padding:10px;border:none;border-radius:25px;background:#f7a600;font-weight:600;color:#000;cursor:pointer;transition:0.3s;}
+    .order-btn:hover {background:#fff;color:#111;}
+
+    /* About */
+    .about-preview {display:flex;align-items:center;justify-content:center;background:#111;padding:60px 10%;}
+    .about-text {max-width:600px;text-align:center;}
+    .about-text h2 {font-size:2rem;margin-bottom:20px;color:#f7a600;}
+    .about-text p {font-size:1rem;color:#ccc;margin-bottom:15px;}
+
+    /* Footer */
+    footer {background:#000;text-align:center;color:#aaa;padding:25px 10%;}
+    footer a {color:#f7a600;}
+
+    /* Responsive */
+    @media(max-width:1024px){.menu-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:768px){
+      nav ul {position:absolute;top:65px;right:-100%;flex-direction:column;background:#000;width:200px;padding:15px;gap:15px;border-radius:0 0 10px 10px;transition:0.3s;}
+      nav ul.active {right:8%;}
+      .hamburger{display:flex;}
+      .menu-grid{grid-template-columns:1fr;}
+      .btn{width:100%;}
+    }
+
+    /* Deal Popup */
+    .deal-popup{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);display:none;justify-content:center;align-items:center;z-index:999;}
+    .deal-content{background:#111;border:2px solid #f7a600;border-radius:15px;padding:20px;text-align:center;position:relative;max-width:350px;width:90%;}
+    .deal-content img{width:100%;border-radius:10px;margin-bottom:15px;}
+    .close-btn{position:absolute;top:10px;right:15px;font-size:25px;color:#fff;cursor:pointer;transition:0.3s;}
+    .close-btn:hover{color:#f7a600;}
+    .deal-order-btn{background:#f7a600;color:#000;font-weight:600;border:none;border-radius:25px;padding:10px 20px;cursor:pointer;transition:0.3s;}
+    .deal-order-btn:hover{background:#fff;color:#111;}
+
+    /* Feedback */
+    .feedback-section{padding:50px 10%;background:#111;text-align:center;}
+    .feedback-section h2{color:#f7a600;margin-bottom:20px;}
+    #feedbackForm{display:flex;flex-direction:column;gap:10px;max-width:400px;margin:auto;}
+    #feedbackForm input,#feedbackForm select,#feedbackForm textarea{padding:10px;border-radius:8px;border:none;outline:none;}
+    #feedbackForm button{background:#f7a600;color:#000;border:none;padding:12px;border-radius:25px;font-weight:600;cursor:pointer;}
+    #feedbackList{margin-top:30px;text-align:left;max-width:600px;margin-inline:auto;}
+    .feedback-item{background:#1a1a1a;border-left:5px solid #f7a600;padding:15px;border-radius:8px;margin-bottom:15px;}
+    .deleteBtn{background:#ff4d4d;color:#fff;border:none;border-radius:8px;padding:5px 10px;cursor:pointer;}
+    .deleteBtn:hover{background:#ff1a1a;}
+
+    /* Full Screen Ad - Perfectly Adjusted */
+#ad-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;  
+  height: 100vh; 
+  background: rgba(0, 0, 0, 0.85); 
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 0;
+}
+
+#ad-popup .deal-content {
+  width: 85%;
+  max-width: 900px;
+  max-height: 85vh;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  background: #111;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* image top, button bottom */
+  align-items: center;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+#ad-popup .deal-content img {
+  width: 100%;
+  height: auto;
+  max-height: 70vh; /* image adjusts to screen height */
+  object-fit: contain; 
+  display: block;
+  margin-bottom: 15px; /* gap between image and button */
+}
+
+#ad-popup .close-btn {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.3s;
+}
+
+#ad-popup .close-btn:hover {
+  color: #f7a600;
+}
+
+#ad-popup .deal-order-btn {
+  width: auto;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  background: #f7a600;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  align-self: center; /* ensure button is centered */
+  margin-bottom: 10px; /* gap from bottom of box */
+}
+
+#ad-popup .deal-order-btn:hover {
+  background: #fff;
+  color: #111;
+}
+
+/* Responsive Adjustments */
+@media(max-width: 1024px) {
+  #ad-popup .deal-content {
+    width: 90%;
+    max-height: 80vh;
+  }
+
+  #ad-popup .close-btn {
+    font-size: 26px;
+  }
+
+  #ad-popup .deal-order-btn {
+    font-size: 0.95rem;
+    padding: 10px 22px;
+  }
+}
+
+@media(max-width: 768px) {
+  #ad-popup .deal-content {
+    width: 95%;
+    max-height: 70vh;
+    padding: 10px;
+  }
+
+  #ad-popup .close-btn {
+    font-size: 24px;
+  }
+
+  #ad-popup .deal-order-btn {
+    font-size: 0.9rem;
+    padding: 8px 18px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Crust & Crums</div>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    <nav>
+      <ul id="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Delicious Fast Food, Pizza & BBQ</h1>
+      <p>Premium taste, sizzling freshness & irresistible aroma – straight from Crust & Crums kitchen to your door.</p>
+      <a href="menu.html" class="btn">Explore Menu</a>
+      <a href="https://wa.me/923343610599" class="btn secondary">Order on WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- Specials -->
+  <section class="featured">
+    <h2>🔥 Our Specials</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <img src="assets/images/Premium-Spicy-Zinger-Burger.jpeg" alt="">
+        <div class="menu-info">
+          <h3>Premium Spicy Zinger Burger</h3>
+          <p>Loaded with crispy chicken, spicy sauce & melting cheese.</p>
+          <button class="order-btn" onclick="orderNow('Premium Spicy Zinger Burger')">Order Now</button>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="assets/images/Special-Crown-Crust-Pizza.png" alt="">
+        <div class="menu-info">
+          <h3>Special Crown Crust Pizza</h3>
+          <p>Extra cheesy, extra spicy — our crowd favorite!</p>
+          <button class="order-btn" onclick="orderNow('Special Crown Crust Pizza')">Order Now</button>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="assets/images/Malai-Boti-Boneless.jpeg" alt="">
+        <div class="menu-info">
+          <h3>Chicken Malai Boti</h3>
+          <p>Soft, creamy & grilled to perfection with desi spices.</p>
+          <button class="order-btn" onclick="orderNow('Chicken Malai Boti')">Order Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about-preview">
+    <div class="about-text">
+      <h2>About Crust & Crums</h2>
+      <p>We’re more than just a fast food spot — we’re a destination for food lovers. From juicy burgers to sizzling BBQs, every recipe is crafted with passion and premium ingredients.</p>
+      <a href="about.html" class="btn">Learn More</a>
+    </div>
+  </section>
+
+  <!-- Feedback Section -->
+  <section class="feedback-section">
+    <h2>⭐ Customer Feedback</h2>
+    <form id="feedbackForm">
+      <input type="text" name="name" placeholder="Your Name... eg: (Mr.Abuzar)" required>
+      <select name="rating" required>
+        <option value="">Rate Us</option>
+        <option value="5">⭐⭐⭐⭐⭐</option>
+        <option value="4">⭐⭐⭐⭐</option>
+        <option value="3">⭐⭐⭐</option>
+        <option value="2">⭐⭐</option>
+        <option value="1">⭐</option>
+      </select>
+      <textarea name="message" placeholder="Write your feedback..." required></textarea>
+      <button type="submit" class="btn">Submit Feedback</button>
+    </form>
+    <div id="feedbackList"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 <strong>Crust & Crums</strong> | Designed & Developed by <a href="https://smazweb.site" target="_blank">Smaz</a></p>
+  </footer>
+
+  <!-- Advertisement Popup -->
+  <div id="ad-popup" class="deal-popup">
+   <div class="deal-content">
+     <span class="close-btn" id="closeAd">&times;</span>
+     <img src="ad1.png" alt="Advertisement">
+     <p style="color:#fff; margin-top:10px;">Check out our special offers!</p>
+     <button class="deal-order-btn" id="adActionBtn">Learn More</button>
+   </div>
+  </div>
+
+  
+  <!-- Daily Deal Popup -->
+  <div id="deal-popup" class="deal-popup">
+    <div class="deal-content">
+      <span class="close-btn" id="closeDeal">&times;</span>
+      <img id="dealImage" src="" alt="Today’s Deal">
+      <button class="deal-order-btn" id="orderDealBtn">Order on WhatsApp</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Hamburger menu
+    const hamburger=document.getElementById("hamburger");
+    const navLinks=document.getElementById("nav-links");
+    hamburger.addEventListener("click",()=>{
+      hamburger.classList.toggle("open");
+      navLinks.classList.toggle("active");
+    });
+
+    // Advertisement Logic
+const adPopup = document.getElementById("ad-popup");
+const closeAd = document.getElementById("closeAd");
+const adActionBtn = document.getElementById("adActionBtn");
+const dealPopup = document.getElementById("deal-popup");
+
+// Daily Deals
+const deals = [
+  { img: "deal1.png", day: "Monday" },
+  { img: "deal2.png", day: "Tuesday" },
+  { img: "deal3.png", day: "Wednesday" },
+  { img: "deal4.png", day: "Thursday" },
+  { img: "deal5.png", day: "Friday" },
+  { img: "deal6.png", day: "Saturday" },
+  { img: "deal7.png", day: "Sunday" },
+];
+const today = new Date().getDay();
+const deal = deals[today === 0 ? 6 : today - 1];
+document.getElementById("dealImage").src = deal.img;
+document.getElementById("orderDealBtn").onclick = () => {
+  window.open(`https://wa.me/923343610599?text=${encodeURIComponent("Assalam u Alaikum! This Order is from Website, and I’d like to order the " + deal.day + " Deal.")}`, "_blank");
+};
+
+// Show Ad on page load
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    adPopup.style.display = "flex";
+  }, 500); // 0.5 sec delay
+});
+
+// Close Ad and show Daily Deal
+closeAd.onclick = () => {
+  adPopup.style.display = "none";
+  setTimeout(() => {
+    dealPopup.style.display = "flex";
+  }, 500); // 0.5 sec delay
+};
+
+// Ad Action Button
+adActionBtn.onclick = () => {
+  window.location.href = "menu.html";
+  adPopup.style.display = "none";
+  setTimeout(() => {
+    dealPopup.style.display = "flex";
+  }, 500);
+};
+
+// Close Deal
+document.getElementById("closeDeal").onclick = () => {
+  dealPopup.style.display = "none";
+};
+
+// Order Now Function
+function orderNow(item) {
+  const number = "923343610599";
+  const message = `Assalam u Alaikum! This Order is from Website, and I’d like to order: ${item}`;
+  window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`, "_blank");
+};
+  </script>
+  
+<!-- ✅ Firebase Feedback System -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+  
+  import { serverTimestamp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
+  import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, updateDoc } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
+
+  // 🔥 Firebase Config
+  const firebaseConfig = {
+    apiKey: "AIzaSyA4Uw7kAotIRr511E_avy-2OoiIU63FetM",
+    authDomain: "crust-and-crums.firebaseapp.com",
+    projectId: "crust-and-crums",
+    storageBucket: "crust-and-crums.appspot.com",
+    messagingSenderId: "711167857993",
+    appId: "1:711167857993:web:10b81eb606f049f382f698",
+    measurementId: "G-MHCZ0G32ML",
+  };
+
+  // 🔧 Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  const ADMIN_PASS = "Smaz@2025"; // 🔑 Only admin can delete
+
+  const feedbackForm = document.getElementById("feedbackForm");
+  const feedbackList = document.getElementById("feedbackList");
+
+  let allFeedbacks = [];
+  let showingAll = false;
+  let currentUserName = ""; // 🔹 Track current user for edit permission
+
+  // ✅ Add Feedback
+  feedbackForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const name = e.target.name.value.trim();
+    const rating = e.target.rating.value.trim();
+    const message = e.target.message.value.trim();
+
+    if (!name || !rating || !message) return alert("⚠️ Please fill all fields!");
+    currentUserName = name; // 🔹 Set current user
+
+    try {
+      await addDoc(collection(db, "feedbacks"), {
+        name,
+        rating,
+        message,
+        createdAt: new Date(),
+      });
+      alert("✅ Thank you for your feedback!");
+      e.target.reset();
+      loadFeedbacks();
+    } catch (err) {
+      console.error(err);
+      alert("⚠️ Error saving feedback!");
+    }
+  });
+
+  // ✅ Load Feedbacks (with Average Rating)
+  async function loadFeedbacks() {
+    feedbackList.innerHTML = "<p>Loading feedbacks...</p>";
+    const snapshot = await getDocs(collection(db, "feedbacks"));
+    allFeedbacks = [];
+    let totalRating = 0;
+
+    snapshot.forEach((docItem) => {
+      const data = docItem.data();
+      allFeedbacks.push({ id: docItem.id, ...data });
+
+      const ratingNum = parseFloat(data.rating);
+      if (!isNaN(ratingNum)) totalRating += ratingNum;
+    });
+
+    // Sort by newest
+    allFeedbacks.sort(
+      (a, b) => (b.createdAt?.toDate?.() || 0) - (a.createdAt?.toDate?.() || 0)
+    );
+
+    // ✅ Calculate Average
+    const avgRating = allFeedbacks.length
+      ? (totalRating / allFeedbacks.length).toFixed(1)
+      : "0.0";
+
+    // ✅ Show average rating at top
+    const avgDiv = document.createElement("div");
+    avgDiv.style = `
+      background: #fff8e1;
+      border: 1px solid #f7a600;
+      color: #000;
+      font-weight: bold;
+      font-size: 18px;
+      text-align: center;
+      padding: 10px;
+      border-radius: 10px;
+      margin: 10px auto;
+    `;
+    avgDiv.textContent = `⭐ Overall Rating: ${avgRating} / 5 (${allFeedbacks.length} reviews)`;
+
+    // ✅ Clear and show average
+    feedbackList.innerHTML = "";
+    feedbackList.appendChild(avgDiv);
+
+    renderFeedbacks();
+  }
+
+  // ✅ Render Feedbacks
+  function renderFeedbacks() {
+    // Keep average box
+    const avgDiv = feedbackList.firstChild;
+    feedbackList.innerHTML = "";
+    if (avgDiv) feedbackList.appendChild(avgDiv);
+
+    const feedbacksToShow = showingAll ? allFeedbacks : allFeedbacks.slice(0, 3);
+
+    feedbacksToShow.forEach((data) => {
+      const div = document.createElement("div");
+      div.classList.add("feedback-item");
+      div.style = `
+        border:1px solid #f7a600;
+        padding:15px;
+        margin:10px;
+        border-radius:10px;
+        background:#fff;
+        color:#000;
+        box-shadow:0 2px 5px rgba(0,0,0,0.1);
+      `;
+
+      // Format Date & Time
+      let feedbackDate = "";
+      if (data.createdAt && data.createdAt.toDate) {
+        const dt = data.createdAt.toDate();
+        const options = { 
+          year: "numeric", month: "short", day: "numeric", 
+          hour: "2-digit", minute: "2-digit", second: "2-digit" 
+        };
+        feedbackDate = dt.toLocaleString("en-US", options);
+      }
+
+      // Add innerHTML with Edit & Delete buttons
+      div.innerHTML = `
+        <h4>${data.name} ⭐ ${data.rating}/5</h4>
+        <p>${data.message}</p>
+        <small style="color:#555;">🕒 ${feedbackDate}</small>
+      `;
+
+      // 🔹 Only show edit button if this is current user's feedback
+      if (data.name === currentUserName) {
+        const editBtn = document.createElement("button");
+        editBtn.textContent = "Edit";
+        editBtn.style = "background:#f7a600;color:#000;border:none;padding:5px 10px;border-radius:5px;cursor:pointer;margin-right:5px;";
+        editBtn.addEventListener("click", async () => {
+          const newName = prompt("Update your name:", data.name);
+          const newRating = prompt("Update rating (1-5):", data.rating);
+          const newMessage = prompt("Update your message:", data.message);
+
+          if (newName && newRating && newMessage) {
+            try {
+              const feedbackRef = doc(db, "feedbacks", data.id);
+              await updateDoc(feedbackRef, {
+                name: newName,
+                rating: newRating,
+                message: newMessage,
+                updatedAt: new Date()
+              });
+              alert("✅ Feedback updated successfully!");
+              currentUserName = newName; // 🔹 update current user name
+              loadFeedbacks();
+            } catch (err) {
+              console.error("Update error:", err);
+              alert("⚠️ Error updating feedback!");
+            }
+          }
+        });
+        div.appendChild(editBtn);
+      }
+
+      // Delete Button (only admin)
+      const deleteBtn = document.createElement("button");
+      deleteBtn.textContent = "Delete";
+      deleteBtn.style = "background:red;color:white;border:none;padding:5px 10px;border-radius:5px;cursor:pointer;";
+      deleteBtn.addEventListener("click", async () => {
+        const pass = prompt("Enter admin password:");
+        if (pass === ADMIN_PASS) {
+          try {
+            await deleteDoc(doc(db, "feedbacks", data.id));
+            alert("✅ Feedback deleted successfully!");
+            loadFeedbacks();
+          } catch (error) {
+            console.error("Delete error:", error);
+            alert("⚠️ Failed to delete feedback. Check Firestore rules or console.");
+          }
+        } else if (pass !== null) {
+          alert("❌ Wrong password!");
+        }
+      });
+      div.appendChild(deleteBtn);
+
+      feedbackList.appendChild(div);
+    });
+
+    // See More / See Less Button
+    if (allFeedbacks.length > 3) {
+      const btn = document.createElement("button");
+      btn.textContent = showingAll ? "See Less" : "See More";
+      btn.style = `
+        display:block;
+        margin:15px auto;
+        background:#f7a600;
+        color:#000;
+        border:none;
+        padding:8px 15px;
+        border-radius:20px;
+        font-weight:600;
+        cursor:pointer;
+      `;
+      btn.addEventListener("click", () => {
+        showingAll = !showingAll;
+        renderFeedbacks();
+      });
+      feedbackList.appendChild(btn);
+    }
+  }
+
+  // ✅ Initial Load
+  loadFeedbacks();
+</script>
+
+</body>
+
+</html>
