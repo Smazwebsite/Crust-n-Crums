@@ -3,46 +3,161 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>404 | Page Not Found</title>
+  <title>Contact Crust & Crums | Nawabshah</title>
 
-  <!-- Professional Styling -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/icons/favicon.png">
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body, html { height: 100%; font-family: 'Poppins', sans-serif; background: #111; color: #fff; display: flex; justify-content: center; align-items: center; text-align: center; }
-    
-    .container { max-width: 600px; padding: 20px; }
-    h1 { font-size: 6rem; color: #f7a600; margin-bottom: 20px; }
-    h2 { font-size: 1.8rem; margin-bottom: 15px; color: #fff; }
-    p { color: #ccc; margin-bottom: 25px; font-size: 1.1rem; }
-    a { text-decoration: none; color: #111; background: #f7a600; padding: 12px 30px; border-radius: 30px; font-weight: 600; transition: 0.3s; }
-    a:hover { background: #fff; color: #111; }
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body { font-family: 'Poppins', sans-serif; line-height:1.8; color:#fff; background:#111; scroll-behavior:smooth; }
 
-    /* Optional: subtle background pattern */
-    body::before {
-      content: "";
-      position: absolute;
-      top:0; left:0;
-      width:100%; height:100%;
-      background: repeating-linear-gradient(
-        45deg,
-        rgba(255,255,255,0.03),
-        rgba(255,255,255,0.03) 1px,
-        transparent 1px,
-        transparent 20px
-      );
-      z-index: 0;
+    a { text-decoration: none; }
+
+    /* Navbar */
+    .navbar { position: fixed; top:0; left:0; width:100%; background:#000; color:#fff; padding:15px 8%; display:flex; justify-content:space-between; align-items:center; z-index:100; }
+    .logo { font-size:1.6rem; font-weight:700; color:#f7a600; }
+    .nav-links { display:flex; gap:25px; align-items:center; }
+    .nav-links a { color:#fff; font-weight:500; transition:0.3s; }
+    .nav-links a:hover, .nav-links a.active { color:#f7a600; }
+
+    /* Hamburger */
+    .hamburger { display:none; flex-direction:column; cursor:pointer; gap:5px; }
+    .hamburger div { width:25px; height:3px; background:#fff; transition:0.3s; }
+
+    /* Hero */
+    .hero { position:relative; display:flex; align-items:center; justify-content:center; text-align:center; height:350px; background:url('assets/images/contact-hero.jpg') center/cover no-repeat; margin-top:70px; }
+    .hero .overlay { position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); }
+    .hero-content { position:relative; z-index:2; padding:0 20px; }
+    .hero-content h1 { font-size:2.5rem; margin-bottom:15px; color:#f7a600; }
+    .hero-content p { font-size:1.1rem; max-width:600px; margin:0 auto; color:#ddd; }
+
+    /* Sections */
+    section { padding:60px 10%; }
+    h2 { color:#f7a600; margin-bottom:25px; font-size:2rem; }
+    p { margin-bottom:15px; color:#ddd; font-size:1rem; }
+    input, textarea { width:100%; padding:12px; border-radius:10px; border:none; font-size:1rem; background:#222; color:#fff; margin-bottom:15px; }
+
+    .form-buttons { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; }
+    .form-buttons .btn { flex:1; text-align:center; }
+
+    /* Buttons */
+    .btn { display:inline-block; padding:12px 25px; border-radius:25px; font-weight:600; text-decoration:none; background:#f7a600; color:#000; transition:0.3s; margin-top:10px; }
+    .btn:hover { background:#fff; color:#111; }
+    .btn.secondary { background:#111; border:2px solid #f7a600; color:#f7a600; }
+    .btn.secondary:hover { background:#f7a600; color:#000; }
+
+    /* Footer */
+    footer { background:#000; text-align:center; color:#aaa; padding:25px 10%; }
+    footer a { color:#f7a600; }
+
+    /* Responsive */
+    @media(max-width:1024px){ section { padding:50px 8%; } }
+    @media(max-width:768px){
+      .hamburger { display:flex; }
+      .nav-links {
+        position:absolute;
+        top:65px;
+        right:-100%;
+        background:#000;
+        flex-direction:column;
+        width:200px;
+        padding:15px;
+        gap:15px;
+        transition:0.3s;
+        border-radius:0 0 10px 10px;
+      }
+      .nav-links.active { right:8%; }
+      section { padding:40px 5%; }
+      .hero { height:250px; }
+      .hero-content h1 { font-size:2rem; }
+      .hero-content p { font-size:1rem; }
+      .btn { width:100%; margin-bottom:10px; }
+      .btn.secondary { width:100%; margin-top:0; }
     }
-
-    .container { position: relative; z-index: 1; }
+    @media(max-width:480px){
+      .hero-content h1 { font-size:1.6rem; }
+      .hero-content p { font-size:0.95rem; }
+      h2 { font-size:1.6rem; }
+      p, input, textarea { font-size:0.95rem; }
+      section { padding:35px 5%; }
+    }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <h1>404</h1>
-    <h2>Oops! Page Not Found</h2>
-    <p>The website you are looking for has been temporarily disabled or removed.</p>
-  </div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Crust & Crums</div>
+    <nav>
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div><div></div><div></div>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero contact-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Get in Touch</h1>
+      <p>Send us your order, feedback, or a quick question — it will arrive directly on our WhatsApp.</p>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="contact-form">
+    <h2>Send a Quick Message</h2>
+    <form id="waForm">
+      <input id="wa_name" type="text" placeholder="Your Name (Optional)">
+      <textarea id="wa_msg" rows="5" placeholder="Type your message here..." required></textarea>
+      <div class="form-buttons">
+        <button type="button" id="waSend" class="btn">Send to WhatsApp</button>
+        <a href="https://wa.me/923313787209" target="_blank" class="btn secondary">Open WhatsApp</a>
+      </div>
+    </form>
+  </section>
+
+  <!-- Location Section -->
+  <section class="contact-location">
+    <h2>Our Location (Nawabshah)</h2>
+    <iframe src="https://www.google.com/maps?q=Crust%20%26%20Crums%20Near%20Al%20Habib%20Bank%20Shahdadpur%20Road%20Nawabshah&output=embed" height="420" style="width:100%; border:0; border-radius:14px;" allowfullscreen loading="lazy"></iframe>
+    <p>Crust & Crums near <strong>Al Habib Bank, Shahdadpur Road, Nawabshah</strong>. (phone: <strong>0334‑3610599</strong>)</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024-2025 <strong>Crust & Crums</strong> | Designed & Developed by <a href="https://smazweb.site" target="_blank">Smaz</a></p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    // Hamburger toggle
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      nav.classList.toggle('active');
+    }
+
+    // WhatsApp form
+    document.getElementById('waSend').addEventListener('click', function () {
+      const name = document.getElementById('wa_name').value.trim();
+      const msg = document.getElementById('wa_msg').value.trim();
+      if (!msg) { alert('Please type a message before sending.'); return; }
+      const phone = '923313787209';
+      const text = encodeURIComponent((name ? ('Name: ' + name + '\n') : '') + msg);
+      window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+    });
+  </script>
+
 </body>
 </html>
